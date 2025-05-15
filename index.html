@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rajkumar Jangam | Cybersecurity Portfolio</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #f9f9f9;
+    }
+
+    body {
+      background-color: #040714;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 50px;
+      height: 85vh;
+      background: linear-gradient(90deg, #00111f 60%, #00111f 60%), url('https://images.unsplash.com/photo-1581090700227-1bc6afbb5d8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') no-repeat right center;
+      background-size: contain;
+    }
+
+    .hero-text {
+      max-width: 50%;
+      z-index: 2;
+      background: rgba(4,7,20,0.8);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 40px #00aaff;
+    }
+
+    .hero-text h1 {
+      font-size: 64px;
+      font-weight: 900;
+      color: #00aaff;
+      margin-bottom: 20px;
+      text-shadow: 0 0 15px rgba(0, 170, 255, 0.7);
+    }
+
+    .hero-text p {
+      font-size: 20px;
+      line-height: 1.4;
+      margin-bottom: 30px;
+    }
+
+    .btn-group button {
+      background-color: #00aaff;
+      border: none;
+      padding: 12px 24px;
+      margin: 5px 8px 0 0;
+      border-radius: 6px;
+      color: #040714;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn-group button:hover {
+      background-color: #0088cc;
+    }
+
+    /* Section styling */
+    section {
+      max-width: 900px;
+      margin: 50px auto;
+      background-color: #0b1e3f;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #005577;
+    }
+
+    section h2 {
+      color: #00aaff;
+      margin-bottom: 25px;
+      font-size: 32px;
+      border-bottom: 2px solid #00aaff;
+      padding-bottom: 8px;
+    }
+
+    /* Lists and paragraphs */
+    p, ul {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    /* Contact Links */
+    a.contact-link {
+      color: #00aaff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a.contact-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        height: auto;
+        padding: 30px 20px;
+        background: #040714;
+        background-image: none;
+      }
+      .hero-text {
+        max-width: 100%;
+        padding: 20px;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-text">
+      <h1>Rajkumar Jangam</h1>
+      <p>Cybersecurity Student | Aspiring Ethical Hacker<br>
+      Passionate about penetration testing, network security, and ethical hacking.</p>
+      <div class="btn-group">
+        <button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About Me</button>
+        <button onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})">Skills</button>
+        <button onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Projects</button>
+        <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Passionate Cybersecurity student focused on penetration testing, network security, and ethical hacking. Enjoys hands-on projects and continuous learning to develop skills that protect systems and data.</p>
+    <p><strong>Education</strong><br>
+       Quinnipiac University - Masters in Cyber Security<br>
+       Jan 2024 - Dec 2025 | GPA: 3.8 / 4.0<br>
+       Coursework includes Intro to Cyber Security, Security Technology, Programming for Security Professionals, Practical/Hands-On Healthcare, Intro to Auth and Access, Cloud Security, Concepts/Practices-Secure Data, Ethical Hacking, Design/Test/Operating.
+    </p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills & Technologies</h2>
+    <p><strong>Technical Skills:</strong> HTML, CSS, JavaScript, Python, Linux, Java</p>
+    <p><strong>Security Tools:</strong> Nmap, Metasploit, Burp Suite, Wireshark</p>
+    <p><strong>Networking:</strong> TCP/IP, DNS, VPN, Firewalls</p>
+    <p><strong>Design & Research Tools:</strong> Figma, Sketch, Adobe XD, Invision, Framer, Principle, Miro, Photoshop, After Effects</p>
+    <p><strong>Design Skills:</strong> Product Design, Motion Design, Interaction Design, Visual Design, User Personas, Journey Mapping, Usability Testing, A/B Testing, Wireframing, Prototyping</p>
+    <h3>Cybersecurity Skills</h3>
+    <ul>
+      <li><strong>Red Team:</strong> Penetration Testing, Vulnerability Assessment, Exploit Development, Social Engineering</li>
+      <li><strong>Blue Team:</strong> Incident Response, Threat Hunting, Security Monitoring, Endpoint Protection</li>
+      <li><strong>SOC:</strong> Log Analysis, SIEM Tools, Alert Triage, Real-time Network Monitoring</li>
+      <li><strong>Other:</strong> Risk Assessment, Security Policy Development, Access Control, Identity Management</li>
+    </ul>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <h3><strong>Web Based Alumni Software</strong></h3>
+    <p>Developed a platform to connect alumni with students and faculty, fostering collaboration and engagement while enabling real-time updates and a seamless user experience.</p>
+    <p>Designed a responsive frontend and implemented backend for user authentication, profile management, and secure data handling.</p>
+    <p><strong>Tools Used:</strong> HTML, CSS, JavaScript, PHP</p>
+
+    <h3><strong>Vehicle Number Plate Image Analysis Using YOLO</strong></h3>
+    <p>Developed an image analysis system using YOLO object detection to detect and read vehicle number plates in real-time.</p>
+    <p>Implemented ML algorithms in Python for detection and integrated Node.js for server-side.</p>
+    <p><strong>Tools Used:</strong> Python, Node.js, GANs</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/raj-kumar-559827228" target="_blank" class="contact-link">linkedin.com/in/raj-kumar-559827228</a></p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/raj-1819" target="_blank" class="contact-link">github.com/raj-1819</a></p>
+    <p><strong>Email:</strong> <a href="mailto:rajkuar1819@gmail.com" class="contact-link">rajkuar1819@gmail.com</a></p>
+  </section>
+
+  <!-- Intro sound -->
+  <audio id="introSound" src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg" preload="auto"></audio>
+
+  <script>
+    window.onload = () => {
+      const sound = document.getElementById('introSound');
+      sound.play().catch(() => {
+        // autoplay might be blocked by browser
+      });
+    };
+  </script>
+
+</body>
+</html>
