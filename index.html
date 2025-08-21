@@ -85,7 +85,12 @@
       padding-bottom: 8px;
     }
 
-    /* Lists and paragraphs */
+    h3 {
+      color: #00ccff;
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
     p, ul {
       font-size: 18px;
       line-height: 1.6;
@@ -131,7 +136,8 @@
     <div class="hero-text">
       <h1>Rajkumar Jangam</h1>
       <p>Cybersecurity Student | Aspiring Ethical Hacker<br>
-      Passionate about penetration testing, network security, and ethical hacking.</p>
+      Passionate about penetration testing, cloud security, and network defense.</p>
+      <p><strong>Hamden, CT</strong> | rajkuar1819@gmail.com | 203-410-9894</p>
       <div class="btn-group">
         <button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About Me</button>
         <button onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})">Skills</button>
@@ -144,42 +150,62 @@
   <!-- About Section -->
   <section id="about">
     <h2>About Me</h2>
-    <p>Passionate Cybersecurity student focused on penetration testing, network security, and ethical hacking. Enjoys hands-on projects and continuous learning to develop skills that protect systems and data.</p>
-    <p><strong>Education</strong><br>
-       Quinnipiac University - Masters in Cyber Security<br>
-       Jan 2024 - Dec 2025 | GPA: 3.8 / 4.0<br>
-       Coursework includes Intro to Cyber Security, Security Technology, Programming for Security Professionals, Practical/Hands-On Healthcare, Intro to Auth and Access, Cloud Security, Concepts/Practices-Secure Data, Ethical Hacking, Design/Test/Operating.
-    </p>
+    <p>Passionate Cybersecurity student with expertise in penetration testing, cloud security, and risk management. I enjoy hands-on projects, real-world labs, and applying security practices to protect systems and sensitive data.</p>
+    <h3>Education</h3>
+    <p><strong>Quinnipiac University</strong> — Master of Science in Cybersecurity<br>
+    Jan 2024 – Dec 2025 | GPA: 3.8 / 4.0</p>
+    <p><strong>Relevant Coursework:</strong> Ethical Hacking (CompTIA PenTest+), Cloud Security (AWS Academy Labs), Database & IoT Security, Network Security, Cryptography, Risk Management, HIPAA Compliance, Privileged Access Management.</p>
+
+    <h3>Cybersecurity Training & Labs</h3>
+    <ul>
+      <li><strong>CompTIA PenTest+ Training:</strong> Learned Pen Testing methodologies (PTES, OSSTMM, MITRE), vulnerability scanning (Nmap, Shodan), exploitation (Metasploit, PowerShell), post-exploitation, and reporting.</li>
+      <li><strong>AWS Academy Training:</strong> Hands-on labs with IAM, EC2, S3, governance, encryption, and compliance in real AWS environments.</li>
+      <li><strong>CyberArk PAM Lab:</strong> Practiced credential management, session monitoring, and access workflows in a lab environment.</li>
+      <li><strong>Healthcare Cybersecurity & HIPAA Compliance Lab:</strong> Applied compliance practices to real-world healthcare scenarios.</li>
+    </ul>
   </section>
 
   <!-- Skills Section -->
   <section id="skills">
     <h2>Skills & Technologies</h2>
-    <p><strong>Technical Skills:</strong> HTML, CSS, JavaScript, Python, Linux, Java</p>
-    <p><strong>Security Tools:</strong> Nmap, Metasploit, Burp Suite, Wireshark</p>
-    <p><strong>Networking:</strong> TCP/IP, DNS, VPN, Firewalls</p>
-    <p><strong>Design & Research Tools:</strong> Figma, Sketch, Adobe XD, Invision, Framer, Principle, Miro, Photoshop, After Effects</p>
-    <p><strong>Design Skills:</strong> Product Design, Motion Design, Interaction Design, Visual Design, User Personas, Journey Mapping, Usability Testing, A/B Testing, Wireframing, Prototyping</p>
-    <h3>Cybersecurity Skills</h3>
     <ul>
-      <li><strong>Red Team:</strong> Penetration Testing, Vulnerability Assessment, Exploit Development, Social Engineering</li>
-      <li><strong>Blue Team:</strong> Incident Response, Threat Hunting, Security Monitoring, Endpoint Protection</li>
-      <li><strong>SOC:</strong> Log Analysis, SIEM Tools, Alert Triage, Real-time Network Monitoring</li>
-      <li><strong>Other:</strong> Risk Assessment, Security Policy Development, Access Control, Identity Management</li>
+      <li><strong>Penetration Testing & Security Tools:</strong> Nmap, Burp Suite, Metasploit, Wireshark, Shodan, Kali Linux</li>
+      <li><strong>Programming & Scripting:</strong> Python, Bash, PowerShell, Java, HTML, CSS, JavaScript</li>
+      <li><strong>Cloud & Virtualization:</strong> AWS (IAM, EC2, S3, VPC), AWS CLI, AWS Learner Lab, VirtualBox</li>
+      <li><strong>Security Concepts & Frameworks:</strong> MITRE ATT&CK, OWASP Top 10, Privilege Escalation, Vulnerability Scanning, Risk Assessment, FMEA, Social Engineering, HIPAA Compliance</li>
+      <li><strong>Tools & Platforms:</strong> CyberArk PAM, Splunk (basic), Linux (Ubuntu, Kali), Git, ELK Stack (intro)</li>
     </ul>
   </section>
 
   <!-- Projects Section -->
   <section id="projects">
     <h2>Projects</h2>
-    <h3><strong>Web Based Alumni Software</strong></h3>
-    <p>Developed a platform to connect alumni with students and faculty, fostering collaboration and engagement while enabling real-time updates and a seamless user experience.</p>
-    <p>Designed a responsive frontend and implemented backend for user authentication, profile management, and secure data handling.</p>
+
+    <h3>Risk Assessment in Healthcare Organization</h3>
+    <ul>
+      <li>Conducted risk assessments on 3 healthcare systems; identified 15+ vulnerabilities.</li>
+      <li>Applied Reason’s theory and FMEA to prioritize risks and create 10 actionable mitigations.</li>
+      <li>Built a monitoring protocol, reducing detection time by 35% through automation.</li>
+      <li>Ensured HIPAA compliance by auditing system configurations and access controls.</li>
+      <li>Authored a 12-page technical report and presented findings to faculty.</li>
+      <li>Led an Agile-based team of 3 to complete the project 1 week ahead of schedule.</li>
+    </ul>
+
+    <h3>Secure Messaging and Communication Apps</h3>
+    <ul>
+      <li>Analyzed vulnerabilities in 3 HIPAA-regulated messaging apps.</li>
+      <li>Designed secure messaging architecture using AES-256 and TLS 1.3 protocols.</li>
+      <li>Conducted threat modeling and data privacy assessments aligned with NIST standards.</li>
+      <li>Authored technical documentation outlining encryption strategies and flaws.</li>
+      <li>Presented security proposals to a group of 15 peers and received commendation.</li>
+    </ul>
+
+    <h3>Web Based Alumni Software</h3>
+    <p>Developed a platform to connect alumni with students and faculty for collaboration and engagement. Built secure authentication, responsive frontend, and backend data management.</p>
     <p><strong>Tools Used:</strong> HTML, CSS, JavaScript, PHP</p>
 
-    <h3><strong>Vehicle Number Plate Image Analysis Using YOLO</strong></h3>
-    <p>Developed an image analysis system using YOLO object detection to detect and read vehicle number plates in real-time.</p>
-    <p>Implemented ML algorithms in Python for detection and integrated Node.js for server-side.</p>
+    <h3>Vehicle Number Plate Image Analysis Using YOLO</h3>
+    <p>Developed an image analysis system using YOLO object detection to detect and read vehicle number plates in real time. Integrated Python ML models with Node.js backend.</p>
     <p><strong>Tools Used:</strong> Python, Node.js, GANs</p>
   </section>
 
@@ -189,6 +215,8 @@
     <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/raj-kumar-559827228" target="_blank" class="contact-link">linkedin.com/in/raj-kumar-559827228</a></p>
     <p><strong>GitHub:</strong> <a href="https://github.com/raj-1819" target="_blank" class="contact-link">github.com/raj-1819</a></p>
     <p><strong>Email:</strong> <a href="mailto:rajkuar1819@gmail.com" class="contact-link">rajkuar1819@gmail.com</a></p>
+    <p><strong>Phone:</strong> 203-410-9894</p>
+    <p><strong>Location:</strong> Hamden, CT</p>
   </section>
 
   <!-- Intro sound -->
@@ -198,7 +226,7 @@
     window.onload = () => {
       const sound = document.getElementById('introSound');
       sound.play().catch(() => {
-        // autoplay might be blocked by browser
+        // autoplay might be blocked
       });
     };
   </script>
