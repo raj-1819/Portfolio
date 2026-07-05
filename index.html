@@ -5,22 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rajkumar Jangam | Cloud Security Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <style>
-    :root{--bg:#020a0f;--surface:#050f18;--card:#071420;--border:#0a2a3a;--accent:#00e5ff;--accent2:#00ff88;--accent3:#ff3c5a;--text:#c8e6f0;--muted:#4a7a8a;--font-head:'Orbitron',monospace;--font-mono:'Share Tech Mono',monospace;--font-body:'Rajdhani',sans-serif}
+    :root {
+      --bg:#020a0f;--surface:#050f18;--card:#071420;--border:#0a2a3a;
+      --accent:#00e5ff;--accent2:#00ff88;--accent3:#ff3c5a;
+      --text:#c8e6f0;--muted:#4a7a8a;
+      --font-head:'Orbitron',monospace;--font-mono:'Share Tech Mono',monospace;--font-body:'Rajdhani',sans-serif;
+    }
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:17px;overflow-x:hidden}
     body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,229,255,0.015) 2px,rgba(0,229,255,0.015) 4px);pointer-events:none;z-index:9999}
     body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:9998;opacity:0.4}
-    nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:60px;background:rgba(2,10,15,0.92);border-bottom:1px solid var(--border);backdrop-filter:blur(10px)}
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 50px;height:60px;background:rgba(2,10,15,0.92);border-bottom:1px solid var(--border);backdrop-filter:blur(10px)}
     .nav-logo{font-family:var(--font-head);font-size:14px;color:var(--accent);letter-spacing:2px}
     .nav-logo span{color:var(--accent2)}
-    .nav-links{display:flex;gap:20px;list-style:none;align-items:center}
-    .nav-links a{font-family:var(--font-mono);font-size:11px;color:var(--muted);text-decoration:none;letter-spacing:1px;transition:color 0.2s}
+    .nav-links{display:flex;gap:30px;list-style:none}
+    .nav-links a{font-family:var(--font-mono);font-size:13px;color:var(--muted);text-decoration:none;letter-spacing:1px;transition:color 0.2s}
     .nav-links a:hover{color:var(--accent)}
     .nav-links a::before{content:'./';color:var(--accent2)}
-    .visitor-badge{font-family:var(--font-mono);font-size:10px;color:var(--accent2);border:1px solid rgba(0,255,136,0.3);border-radius:20px;padding:3px 10px;background:rgba(0,255,136,0.05)}
     .hero{min-height:100vh;display:flex;align-items:center;padding:80px 60px 60px;position:relative;overflow:hidden}
     .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.04) 1px,transparent 1px);background-size:50px 50px;animation:gridScroll 20s linear infinite}
     @keyframes gridScroll{from{transform:translateY(0)}to{transform:translateY(50px)}}
@@ -67,7 +70,7 @@
     .exp-date{font-family:var(--font-mono);font-size:11px;color:var(--muted);white-space:nowrap}
     .exp-bullets{list-style:none}
     .exp-bullets li{font-size:15px;color:var(--text);padding:3px 0 3px 18px;position:relative;line-height:1.55}
-    .exp-bullets li::before{content:'>';position:absolute;left:0;color:var(--accent)}
+    .exp-bullets li::before{content:'›';position:absolute;left:0;color:var(--accent)}
     .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
     .skill-category-title{font-family:var(--font-mono);font-size:12px;color:var(--accent2);letter-spacing:2px;margin-bottom:14px}
     .skill-tags{display:flex;flex-wrap:wrap;gap:8px}
@@ -81,7 +84,7 @@
     .project-desc{font-size:15px;line-height:1.65;color:var(--text);flex:1;margin-bottom:16px}
     .project-bullets{list-style:none;margin-bottom:16px}
     .project-bullets li{font-size:14px;color:var(--text);padding:3px 0 3px 16px;position:relative;line-height:1.55}
-    .project-bullets li::before{content:'>';position:absolute;left:0;color:var(--accent)}
+    .project-bullets li::before{content:'›';position:absolute;left:0;color:var(--accent)}
     .project-tech{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
     .tech-pill{font-family:var(--font-mono);font-size:11px;padding:3px 8px;border-radius:3px;border:1px solid var(--border);color:var(--muted)}
     .capstone-card{grid-column:1/-1;border-color:rgba(0,229,255,0.25);background:linear-gradient(135deg,#071420,#051018)}
@@ -114,96 +117,7 @@
     .contact-val a:hover{text-decoration:underline}
     footer{text-align:center;padding:40px 20px;border-top:1px solid var(--border);font-family:var(--font-mono);font-size:12px;color:var(--muted)}
     footer span{color:var(--accent2)}
-    /* METRICS */
-    .metrics-dashboard{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
-    .metric-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px 16px;text-align:center;position:relative;overflow:hidden}
-    .metric-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
-    .mc-blue::before{background:var(--accent)}.mc-green::before{background:var(--accent2)}.mc-red::before{background:var(--accent3)}.mc-yellow::before{background:#ffcc00}
-    .metric-val{font-family:var(--font-head);font-size:26px;font-weight:900;margin-bottom:4px}
-    .mc-blue .metric-val{color:var(--accent)}.mc-green .metric-val{color:var(--accent2)}.mc-red .metric-val{color:var(--accent3)}.mc-yellow .metric-val{color:#ffcc00}
-    .metric-label{font-family:var(--font-mono);font-size:9px;color:var(--muted);letter-spacing:1px}
-    .charts-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
-    .chart-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px}
-    .chart-title{font-family:var(--font-mono);font-size:11px;color:var(--accent2);letter-spacing:2px;margin-bottom:14px}
-    .chart-wrap{position:relative;height:200px}
-    /* THREAT FEED */
-    .threat-feed{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px 24px}
-    .threat-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-    .threat-status{display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11px;color:var(--accent2)}
-    .pulse-dot{width:8px;height:8px;border-radius:50%;background:var(--accent2);animation:pulse-anim 2s infinite}
-    @keyframes pulse-anim{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
-    .threat-ticker{height:200px;overflow:hidden;position:relative}
-    .threat-ticker::before{content:'';position:absolute;top:0;left:0;right:0;height:30px;background:linear-gradient(to bottom,var(--card),transparent);z-index:2;pointer-events:none}
-    .threat-ticker::after{content:'';position:absolute;bottom:0;left:0;right:0;height:30px;background:linear-gradient(to top,var(--card),transparent);z-index:2;pointer-events:none}
-    .threat-item{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(10,42,58,0.5);font-family:var(--font-mono);font-size:11px}
-    .threat-sev{padding:2px 6px;border-radius:3px;font-size:10px;flex-shrink:0}
-    .sev-critical{background:rgba(255,60,90,0.15);color:var(--accent3);border:1px solid rgba(255,60,90,0.3)}
-    .sev-high{background:rgba(255,150,0,0.12);color:#ff9600;border:1px solid rgba(255,150,0,0.3)}
-    .sev-medium{background:rgba(255,204,0,0.1);color:#ffcc00;border:1px solid rgba(255,204,0,0.3)}
-    .threat-type{color:var(--accent);flex-shrink:0;min-width:80px}
-    .threat-ioc{color:var(--text);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-    .threat-time{color:var(--muted);flex-shrink:0}
-    .cve-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .cve-item{background:rgba(255,60,90,0.04);border:1px solid rgba(255,60,90,0.15);border-radius:6px;padding:10px 14px}
-    .cve-id{font-family:var(--font-mono);font-size:12px;color:var(--accent3);margin-bottom:4px}
-    .cve-score{font-family:var(--font-mono);font-size:10px;color:var(--muted)}
-    .cve-desc{font-size:13px;color:var(--text);line-height:1.4;margin-top:4px}
-    /* WRITEUPS */
-    .writeup-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .writeup-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:24px;display:flex;flex-direction:column;transition:border-color 0.3s,box-shadow 0.3s;position:relative}
-    .writeup-card:hover{border-color:rgba(0,229,255,0.3);box-shadow:0 0 20px rgba(0,229,255,0.05)}
-    .writeup-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:8px 8px 0 0;opacity:0;transition:opacity 0.3s;background:linear-gradient(90deg,var(--accent),transparent)}
-    .writeup-card:hover::before{opacity:1}
-    .writeup-tag{font-family:var(--font-mono);font-size:10px;padding:3px 8px;border-radius:3px;border:1px solid;display:inline-block;margin-bottom:12px}
-    .tag-detection{color:var(--accent2);border-color:rgba(0,255,136,0.3);background:rgba(0,255,136,0.05)}
-    .tag-cloud{color:var(--accent);border-color:rgba(0,229,255,0.3);background:rgba(0,229,255,0.05)}
-    .tag-threat{color:var(--accent3);border-color:rgba(255,60,90,0.3);background:rgba(255,60,90,0.05)}
-    .writeup-title{font-family:var(--font-head);font-size:13px;color:#fff;letter-spacing:1px;margin-bottom:10px;line-height:1.5}
-    .writeup-excerpt{font-size:14px;color:var(--muted);line-height:1.6;flex:1;margin-bottom:14px}
-    .writeup-meta{font-family:var(--font-mono);font-size:10px;color:var(--muted);display:flex;gap:14px}
-    .writeup-featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1.2fr;gap:0;overflow:hidden;padding:0}
-    .writeup-featured-left{padding:28px;display:flex;flex-direction:column}
-    .writeup-featured-code{background:#010810;padding:28px;font-family:var(--font-mono);font-size:12px;line-height:1.8;color:var(--muted);overflow:auto;border-left:1px solid var(--border)}
-    .code-comment{color:#2a5a3a}.code-keyword{color:var(--accent)}.code-string{color:var(--accent2)}.code-var{color:#ff9600}
-    /* ANALYTICS */
-    .analytics-bar{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px 24px;margin-bottom:20px}
-    .analytics-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-    .analytics-stat{text-align:center}
-    .analytics-val{font-family:var(--font-head);font-size:22px;color:var(--accent);margin-bottom:2px}
-    .analytics-label{font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:1px}
-    .referrer-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
-    .ref-badge{font-family:var(--font-mono);font-size:11px;padding:4px 10px;border-radius:20px;border:1px solid var(--border);color:var(--muted)}
-    .ref-badge.active{border-color:var(--accent);color:var(--accent);background:rgba(0,229,255,0.05)}
-    /* AI BOT */
-    #ai-btn{position:fixed;bottom:30px;right:30px;z-index:2000;background:var(--accent);color:var(--bg);font-family:var(--font-mono);font-size:12px;padding:12px 20px;border-radius:4px;cursor:pointer;border:none;letter-spacing:1px;font-weight:700;display:flex;align-items:center;gap:8px;box-shadow:0 0 20px rgba(0,229,255,0.3);transition:all 0.2s}
-    #ai-btn:hover{box-shadow:0 0 30px rgba(0,229,255,0.5)}
-    .btn-dot{width:8px;height:8px;border-radius:50%;background:var(--bg);animation:pulse-anim 2s infinite}
-    #ai-panel{position:fixed;bottom:90px;right:30px;z-index:2000;width:380px;height:520px;background:#030e18;border:1px solid var(--accent);border-radius:8px;display:none;flex-direction:column;box-shadow:0 0 40px rgba(0,229,255,0.15)}
-    #ai-panel.open{display:flex}
-    .ai-header{background:rgba(0,229,255,0.07);padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
-    .ai-header-left{display:flex;align-items:center;gap:10px}
-    .ai-avatar{width:32px;height:32px;border-radius:4px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:11px;color:var(--bg);font-weight:700}
-    .ai-title{font-family:var(--font-head);font-size:12px;color:var(--accent)}
-    .ai-sub{font-family:var(--font-mono);font-size:10px;color:var(--muted)}
-    .ai-close{background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;padding:0;line-height:1}
-    .ai-close:hover{color:var(--accent)}
-    .ai-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px}
-    .ai-messages::-webkit-scrollbar{width:4px}
-    .ai-messages::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
-    .msg{max-width:90%;font-family:var(--font-mono);font-size:12px;line-height:1.6;padding:10px 14px;border-radius:6px}
-    .msg-bot{background:rgba(0,229,255,0.06);border:1px solid rgba(0,229,255,0.15);color:var(--text);align-self:flex-start}
-    .msg-user{background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2);color:var(--accent2);align-self:flex-end}
-    .msg-typing{background:rgba(0,229,255,0.06);border:1px solid rgba(0,229,255,0.15);color:var(--muted);align-self:flex-start;font-style:italic}
-    .ai-suggestions{padding:8px 16px;display:flex;flex-wrap:wrap;gap:6px;border-top:1px solid var(--border)}
-    .ai-chip{font-family:var(--font-mono);font-size:10px;padding:4px 10px;border-radius:3px;border:1px solid var(--border);color:var(--muted);cursor:pointer;transition:all 0.2s;background:none;white-space:nowrap}
-    .ai-chip:hover{border-color:var(--accent);color:var(--accent);background:rgba(0,229,255,0.04)}
-    .ai-input-row{display:flex;gap:8px;padding:12px 16px;border-top:1px solid var(--border)}
-    .ai-input{flex:1;background:rgba(0,229,255,0.04);border:1px solid var(--border);border-radius:4px;color:var(--text);font-family:var(--font-mono);font-size:12px;padding:8px 12px;outline:none;transition:border-color 0.2s}
-    .ai-input:focus{border-color:var(--accent)}
-    .ai-input::placeholder{color:var(--muted)}
-    .ai-send{background:var(--accent);color:var(--bg);border:none;border-radius:4px;padding:8px 14px;cursor:pointer;font-family:var(--font-mono);font-size:12px;font-weight:700;transition:opacity 0.2s}
-    .ai-send:disabled{opacity:0.4;cursor:not-allowed}
-    @media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.hero{padding:80px 20px 40px}.projects-grid,.capstone-inner,.soc-inner,.contact-grid,.charts-row,.writeup-grid,.cve-grid{grid-template-columns:1fr}.capstone-card,.soc-card{grid-column:1}.writeup-featured{grid-template-columns:1fr}.writeup-featured-code{display:none}.metrics-dashboard,.analytics-row{grid-template-columns:1fr 1fr}#ai-panel{width:calc(100vw - 40px);right:20px}#ai-btn{right:20px;bottom:20px}}
+    @media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.hero{padding:80px 20px 40px}.projects-grid,.capstone-inner,.soc-inner,.contact-grid{grid-template-columns:1fr}.capstone-card,.soc-card{grid-column:1}}
   </style>
 </head>
 <body>
@@ -213,14 +127,10 @@
   <ul class="nav-links">
     <li><a href="#about">about</a></li>
     <li><a href="#experience">experience</a></li>
-    <li><a href="#metrics">metrics</a></li>
     <li><a href="#skills">skills</a></li>
-    <li><a href="#threat">threat-intel</a></li>
     <li><a href="#projects">projects</a></li>
-    <li><a href="#writeups">writeups</a></li>
     <li><a href="#certs">certs</a></li>
     <li><a href="#contact">contact</a></li>
-    <li><span class="visitor-badge" id="nav-visitors">● loading</span></li>
   </ul>
 </nav>
 
@@ -230,30 +140,29 @@
   <div class="hero-content">
     <div class="hero-tag">// CLOUD SECURITY ENGINEER | DETECTION ENGINEERING | ZERO TRUST | CSPM | DEVSECOPS</div>
     <h1 class="hero-name">Rajkumar<br><span class="accent">Jangam</span></h1>
-    <div class="hero-title" id="typewriter">Cloud Security Engineer &middot; Aetna<span class="cursor">_</span></div>
-    <p class="hero-desc">Cyber Security Engineer with 4+ years of experience across Cloud Security, Security Operations, Detection Engineering, Incident Response, and DevSecOps. Securing enterprise environments at Aetna and Lincoln Financial Group -- managing cloud workloads across AWS, Azure, and GCP, remediating 95% of critical CVEs within 72 hours, and reducing cloud misconfigurations by 45%.</p>
+    <div class="hero-title" id="typewriter">Cloud Security Engineer · Aetna<span class="cursor">_</span></div>
+    <p class="hero-desc">Cyber Security Engineer with 4+ years of experience across Cloud Security, Security Operations, Detection Engineering, Incident Response, and DevSecOps. Securing enterprise environments at Aetna and Lincoln Financial Group — managing cloud workloads across AWS, Azure, and GCP, remediating 95% of critical CVEs within 72 hours, and reducing cloud misconfigurations by 45%.</p>
     <div class="hero-meta">
-      <span>&#128205;</span>Prospect, CT 06712 &nbsp;&middot;&nbsp;
-      <span>&#128231;</span>rajkumarjangam1710@gmail.com &nbsp;&middot;&nbsp;
-      <span>&#128222;</span>203-410-9894
+      <span>📍</span>Prospect, CT 06712 &nbsp;·&nbsp;
+      <span>📧</span>rajkumarjangam1710@gmail.com &nbsp;·&nbsp;
+      <span>📞</span>203-410-9894
     </div>
     <div class="hero-btns">
       <a class="btn btn-primary" href="#experience">View Experience</a>
       <a class="btn btn-outline" href="#contact">Contact Me</a>
-      <a class="btn btn-outline" href="https://www.linkedin.com/in/rajkumar-jangam-559827228/" target="_blank">LinkedIn &#8599;</a>
-      <a class="btn btn-outline" href="https://github.com/raj-1819" target="_blank">GitHub &#8599;</a>
+      <a class="btn btn-outline" href="https://www.linkedin.com/in/rajkumar-jangam-559827228/" target="_blank">LinkedIn ↗</a>
+      <a class="btn btn-outline" href="https://github.com/raj-1819" target="_blank">GitHub ↗</a>
     </div>
     <div class="status-row">
-      <span class="status-badge badge-green">&#9679; Open to Opportunities</span>
-      <span class="status-badge badge-blue">&#9679; Cloud Security Engineer</span>
-      <span class="status-badge badge-blue">&#9679; Detection Engineering</span>
-      <span class="status-badge badge-blue">&#9679; Zero Trust &middot; CSPM</span>
-      <span class="status-badge badge-red">&#9679; CISSP &middot; OSCP &middot; SC-200</span>
+      <span class="status-badge badge-green">● Open to Opportunities</span>
+      <span class="status-badge badge-blue">● Cloud Security Engineer</span>
+      <span class="status-badge badge-blue">● Detection Engineering</span>
+      <span class="status-badge badge-blue">● Zero Trust · CSPM</span>
+      <span class="status-badge badge-red">● CISSP · OSCP · SC-200</span>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
 <div class="section" id="about">
   <div class="section-header"><span class="section-num">01</span><h2 class="section-title">ABOUT</h2><div class="section-line"></div></div>
   <div style="display:flex;flex-direction:column;gap:20px">
@@ -262,150 +171,110 @@
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
       <div class="card edu-card">
-        <div class="school">&#127891; Quinnipiac University</div>
+        <div class="school">🎓 Quinnipiac University</div>
         <div class="degree">M.S. Cybersecurity</div>
-        <div class="meta">Jan 2024 -- Dec 2025 &middot; Hamden, Connecticut, USA</div>
+        <div class="meta">Jan 2024 – Dec 2025 · Hamden, Connecticut, USA</div>
         <div class="gpa">GPA: 3.87 / 4.0</div>
       </div>
       <div class="card" style="display:flex;flex-direction:column;justify-content:center;gap:10px">
-        <div style="font-family:var(--font-mono);font-size:12px;color:var(--accent2);letter-spacing:2px;margin-bottom:6px">CAREER SNAPSHOT</div>
+        <div style="font-family:var(--font-mono);font-size:12px;color:var(--accent2);letter-spacing:2px;margin-bottom:6px">KEY METRICS</div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
           <div style="background:rgba(0,229,255,0.05);border:1px solid var(--border);border-radius:6px;padding:10px 12px"><div style="font-family:var(--font-mono);font-size:18px;color:var(--accent)">4+</div><div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);margin-top:2px">YEARS EXP</div></div>
-          <div style="background:rgba(0,229,255,0.05);border:1px solid var(--border);border-radius:6px;padding:10px 12px"><div style="font-family:var(--font-mono);font-size:18px;color:var(--accent)">8</div><div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);margin-top:2px">CERTIFICATIONS</div></div>
-          <div style="background:rgba(0,229,255,0.05);border:1px solid var(--border);border-radius:6px;padding:10px 12px"><div style="font-family:var(--font-mono);font-size:18px;color:var(--accent2)" id="months-counter">5</div><div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);margin-top:2px">MO AT AETNA</div></div>
-          <div style="background:rgba(0,229,255,0.05);border:1px solid var(--border);border-radius:6px;padding:10px 12px"><div style="font-family:var(--font-mono);font-size:18px;color:var(--accent2)">3</div><div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);margin-top:2px">INDUSTRIES</div></div>
+          <div style="background:rgba(0,229,255,0.05);border:1px solid var(--border);border-radius:6px;padding:10px 12px"><div style="font-family:var(--font-mono);font-size:18px;color:var(--accent)">500+</div><div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);margin-top:2px">CLOUD VULNS FIXED</div></div>
+          <div style="background:rgba(0,229,255,0.05);border:1px solid var(--border);border-radius:6px;padding:10px 12px"><div style="font-family:var(--font-mono);font-size:18px;color:var(--accent2)">95%</div><div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);margin-top:2px">CVE FIX IN 72H</div></div>
+          <div style="background:rgba(0,229,255,0.05);border:1px solid var(--border);border-radius:6px;padding:10px 12px"><div style="font-family:var(--font-mono);font-size:18px;color:var(--accent2)">8</div><div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);margin-top:2px">CERTIFICATIONS</div></div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- EXPERIENCE -->
 <div class="section" id="experience">
   <div class="section-header"><span class="section-num">02</span><h2 class="section-title">EXPERIENCE</h2><div class="section-line"></div></div>
   <div style="display:flex;flex-direction:column;gap:16px">
+
     <div class="card exp-card">
       <div class="exp-header">
-        <div><div class="exp-role">Cloud Security Engineer</div><div class="exp-company">Aetna, Inc. &middot; Hartford, Connecticut, USA</div></div>
-        <div class="exp-date">Feb 2026 -- Present</div>
+        <div><div class="exp-role">Cloud Security Engineer</div><div class="exp-company">Aetna, Inc. · Hartford, Connecticut, USA</div></div>
+        <div class="exp-date">Feb 2026 – Present</div>
       </div>
       <ul class="exp-bullets">
         <li>Architected enterprise cloud security controls across <strong style="color:var(--accent)">AWS, Azure, and GCP</strong> using Security Hub, GuardDuty, Inspector, Macie, CloudTrail, Azure Defender, and Microsoft Defender for Cloud, reducing cloud misconfigurations by <strong style="color:var(--accent)">45%</strong>.</li>
-        <li>Designed and managed <strong style="color:var(--accent)">CSPM, CNAPP, CWPP, and Kubernetes Security</strong> using Prisma Cloud, Wiz, Lacework, and Aqua Security, remediating <strong style="color:var(--accent)">500+ cloud vulnerabilities</strong> and compliance gaps across containerized workloads.</li>
-        <li>Developed and enforced Zero Trust Architecture (NIST SP 800-207) via Microsoft Entra ID, Okta, BeyondTrust, CyberArk, HashiCorp Vault, and Tailscale, reducing privileged attack surface by <strong style="color:var(--accent)">60%</strong>; coordinated secrets rotation with AWS Secrets Manager, Azure Key Vault, and GCP Secret Manager.</li>
-        <li>Integrated security into <strong style="color:var(--accent)">10+ DevSecOps pipelines</strong> using Terraform, Atlantis, GitHub Actions, Jenkins, Azure DevOps, Semgrep SAST, Snyk SCA, Trufflehog, Checkov, OPA, and Falco, enabling Shift-Left and supply chain protection; managed PKI lifecycle via DigiCert and AppViewX.</li>
-        <li>Implemented continuous cloud threat detection via Microsoft Sentinel, Splunk ES, CrowdStrike Falcon, Elastic, and Databricks AI-powered analytics; administered Akamai WAF, AWS WAF, Palo Alto NGFW, and F5 LTM/GTM, reducing cloud incident response time by <strong style="color:var(--accent)">35%</strong>.</li>
-        <li>Performed cloud security assessments aligned with <strong style="color:var(--accent)">NIST 800-53, HITRUST, HIPAA, HITECH, PCI-DSS, SOC 2, FedRAMP, and CIS Controls 18</strong> across 2M+ patient records; maintained SSPs, POA&Ms, and continuous assessment processes including SSPM, CASB, and OAuth scope governance.</li>
-        <li>Conducted threat modeling using STRIDE, Kill Chain, and Diamond Model; assessed AI system security risks including data poisoning, adversarial attacks, and model theft; produced intelligence briefings for leadership on geopolitical, criminal, and hacktivist threat actors.</li>
-        <li>Automated security operations and cloud governance using Python, PowerShell, Go, Bash, Terraform, Lambda, Azure Functions, and REST APIs, saving <strong style="color:var(--accent)">25+ engineering hours per week</strong>; built Power BI, Sigma, and Snowflake reporting dashboards.</li>
+        <li>Designed and managed <strong style="color:var(--accent)">CSPM, CNAPP, CWPP, and Kubernetes Security</strong> using Prisma Cloud, Wiz, and Lacework, remediating <strong style="color:var(--accent)">500+ cloud vulnerabilities</strong> across containerized workloads.</li>
+        <li>Developed and enforced Zero Trust Architecture (NIST SP 800-207) via Entra ID, Okta, BeyondTrust, and HashiCorp Vault, reducing privileged attack surface by <strong style="color:var(--accent)">60%</strong>.</li>
+        <li>Integrated security into <strong style="color:var(--accent)">10+ DevSecOps pipelines</strong> using Terraform, GitHub Actions, Jenkins, Azure DevOps, Veracode, Snyk, Checkov, OPA, and Falco.</li>
+        <li>Implemented continuous cloud threat detection via Microsoft Sentinel, Splunk, CrowdStrike Falcon Cloud Security, and AI-powered analytics, reducing incident response time by <strong style="color:var(--accent)">35%</strong>.</li>
+        <li>Performed cloud security assessments aligned with <strong style="color:var(--accent)">NIST 800-53, HITRUST, HIPAA, PCI-DSS, SOC 2, and CIS Benchmarks</strong> across 2M+ patient records.</li>
+        <li>Automated security operations using Python, PowerShell, Go, Terraform, Lambda Functions, and REST APIs, saving <strong style="color:var(--accent)">25+ engineering hours per week</strong>.</li>
+        <li>Led vulnerability management with Tenable Cloud Security, Qualys VMDR, Wiz, and AWS Inspector, remediating <strong style="color:var(--accent)">95% of critical CVEs within 72 hours</strong>.</li>
       </ul>
     </div>
+
     <div class="card exp-card">
       <div class="exp-header">
-        <div><div class="exp-role">Security Analyst</div><div class="exp-company">Lincoln Financial Group &middot; Radnor, Pennsylvania, USA</div></div>
-        <div class="exp-date">Jul 2024 -- Dec 2025</div>
+        <div><div class="exp-role">Security Analyst</div><div class="exp-company">Lincoln Financial Group · Radnor, Pennsylvania, USA</div></div>
+        <div class="exp-date">Jul 2024 – Dec 2025</div>
       </div>
       <ul class="exp-bullets">
-        <li>Led enterprise security monitoring and incident response using <strong style="color:var(--accent)">Microsoft Sentinel, Splunk ES, CrowdStrike Falcon, Defender XDR, QRadar, and SOAR</strong>, triaging <strong style="color:var(--accent)">400+ daily alerts</strong>; reduced false positives by <strong style="color:var(--accent)">40%</strong>, manual effort by 40%, and MTTR by 30%.</li>
-        <li>Conducted advanced threat hunting and digital forensics using MITRE ATT&CK, MISP, ThreatConnect, Recorded Future, Diamond Model, Volatility, Autopsy, and Wireshark, identifying ransomware, insider risks, and APT activity across financial market infrastructure; improved MTTD by 25%.</li>
-        <li>Managed vulnerability assessment program across <strong style="color:var(--accent)">5,000+ assets</strong> using Qualys VMDR, Tenable.io, Rapid7 InsightVM, Burp Suite, and Nuclei; administered SSPM, CASB, OAuth scope governance, and shadow IT detection; maintained risk register with ratings, mitigation strategies, and action plans.</li>
-        <li>Implemented Zero Trust, Identity Governance, PAM, MFA, and Conditional Access via CyberArk, BeyondTrust, Okta, SAML/OIDC/FIDO2, and Tailscale, eliminating <strong style="color:var(--accent)">100% of standing privileged access</strong>; developed SOAR playbooks and ETL pipelines in Elastic and Databricks for anomaly detection.</li>
-        <li>Engineered SIEM detection rules, UEBA models, and automated response playbooks using KQL, SPL, Python, PowerShell, and Logic Apps; administered Palo Alto Cortex MDM and Chrome Enterprise; conducted OSX and endpoint forensic investigation; supported exception request reviews for threat and risk.</li>
-        <li>Administered Microsoft Purview, Symantec DLP, and Defender for Cloud Apps; supported <strong style="color:var(--accent)">NIST CSF, NIST 800-53, ISO 27001, SOC 2, SOX, PCI-DSS, GDPR, and CCPA</strong> compliance; documented BCP/DR plans and continuous assessment processes.</li>
+        <li>Led enterprise security monitoring and incident response using <strong style="color:var(--accent)">Microsoft Sentinel, Splunk, CrowdStrike Falcon, Defender XDR, QRadar, and SOAR</strong>, triaging <strong style="color:var(--accent)">400+ daily alerts</strong>.</li>
+        <li>Conducted advanced threat hunting and digital forensics using MITRE ATT&amp;CK, MISP, VirusTotal, Recorded Future, and AI-driven analytics; reduced <strong style="color:var(--accent)">MTTR by 30%</strong>.</li>
+        <li>Managed vulnerability assessment across <strong style="color:var(--accent)">5,000+ assets</strong> using Qualys VMDR, Tenable.io, Rapid7 InsightVM, and Burp Suite.</li>
+        <li>Implemented Zero Trust, Identity Governance, PAM, MFA, and Conditional Access, eliminating <strong style="color:var(--accent)">100% of standing privileged access</strong> across enterprise cloud workloads.</li>
+        <li>Engineered and tuned SIEM detection rules, UEBA models, and automated response playbooks using KQL, Python, PowerShell, and Logic Apps, reducing false positives by <strong style="color:var(--accent)">40%</strong> and alert fatigue by <strong style="color:var(--accent)">35%</strong>.</li>
+        <li>Administered Microsoft Purview, Symantec DLP, and Defender for Cloud Apps; supported <strong style="color:var(--accent)">NIST CSF, NIST 800-53, ISO 27001, SOC 2, SOX, and PCI-DSS</strong> compliance.</li>
       </ul>
     </div>
+
     <div class="card exp-card">
       <div class="exp-header">
-        <div><div class="exp-role">SOC Analyst</div><div class="exp-company">Tata Consultancy Services (TCS) &middot; Mumbai, India</div></div>
-        <div class="exp-date">Jun 2021 -- Dec 2023</div>
+        <div><div class="exp-role">SOC Analyst</div><div class="exp-company">Tata Consultancy Services (TCS) · Mumbai, India</div></div>
+        <div class="exp-date">Jun 2021 – Dec 2023</div>
       </div>
       <ul class="exp-bullets">
-        <li>Performed 24x7 security monitoring using <strong style="color:var(--accent)">Splunk, IBM QRadar, ArcSight, Microsoft Sentinel, and CrowdStrike Falcon</strong>, investigating <strong style="color:var(--accent)">300+ monthly events</strong> with 100% incident resolution rate; improved MTTD by 25% and MTTR by 30%.</li>
-        <li>Conducted L1/L2 incident response including alert validation, root cause analysis, containment, remediation, and post-incident reporting; performed proactive threat hunting using MITRE ATT&CK, identifying APT activity, lateral movement, and anomalous user behavior across endpoints, servers, firewalls, VPNs, and Active Directory.</li>
-        <li>Administered CrowdStrike Falcon EDR, Microsoft Defender for Endpoint, IDS/IPS, WAF, DLP, Email Security Gateways, and Palo Alto Cortex MDM; managed vulnerability remediation using Nessus, Qualys, Rapid7 InsightVM, Nmap, and Tenable, remediating <strong style="color:var(--accent)">200+ findings</strong> within SLA.</li>
-        <li>Performed forensic analysis using Volatility, Autopsy, and Wireshark; produced threat intelligence reports using MISP, Diamond Model, and IOC correlation across criminal, geopolitical, and hacktivist campaigns; conducted red team exercises and adversarial emulation using Kali Linux, Metasploit, and custom offensive tooling.</li>
-        <li>Supported bug bounty triage via HackerOne and Bugcrowd; administered Splunk SPL query development and dashboards; maintained SOC 1, SOC 2 Type II, and ISO 27001 certification documentation; mentored <strong style="color:var(--accent)">3 junior SOC analysts</strong> across L1/L2/TI functions, reducing time-to-competency by 40%.</li>
-        <li>Delivered 300+ monthly event investigations with 100% resolution; remediated 200+ vulnerabilities; contributed to geopolitical, criminal, and hacktivist threat actor tracking; maintained SLA compliance across a <strong style="color:var(--accent)">12-person SOC team</strong>.</li>
+        <li>Performed 24x7 security monitoring using <strong style="color:var(--accent)">Splunk, IBM QRadar, ArcSight, Microsoft Sentinel, and CrowdStrike Falcon</strong>, investigating <strong style="color:var(--accent)">300+ monthly alerts</strong> with 100% incident resolution rate.</li>
+        <li>Conducted L1/L2 incident response including root cause analysis, containment, and post-incident reporting, improving <strong style="color:var(--accent)">MTTD by 25%</strong> and <strong style="color:var(--accent)">MTTR by 30%</strong> over 12 months.</li>
+        <li>Performed proactive threat hunting across endpoints, firewalls, cloud platforms, VPNs, and Active Directory using MITRE ATT&amp;CK, identifying APT activity and lateral movement.</li>
+        <li>Managed vulnerability remediation using Nessus, Qualys, Rapid7 InsightVM, Nmap, and Tenable, closing <strong style="color:var(--accent)">200+ vulnerabilities</strong> within SLA.</li>
+        <li>Mentored <strong style="color:var(--accent)">3 junior SOC analysts</strong>, reducing time-to-competency by 40%; collaborated across a <strong style="color:var(--accent)">12-person SOC team</strong> spanning L1, L2, and threat intelligence functions.</li>
       </ul>
     </div>
+
   </div>
 </div>
 
-<!-- METRICS -->
-<div class="section" id="metrics">
-  <div class="section-header"><span class="section-num">03</span><h2 class="section-title">IMPACT METRICS</h2><div class="section-line"></div></div>
-  <div class="metrics-dashboard">
-    <div class="metric-card mc-blue"><div class="metric-val" id="m1">0%</div><div class="metric-label">CLOUD MISCONFIG REDUCTION</div></div>
-    <div class="metric-card mc-green"><div class="metric-val" id="m2">0%</div><div class="metric-label">CRITICAL CVE FIX IN 72H</div></div>
-    <div class="metric-card mc-red"><div class="metric-val" id="m3">0</div><div class="metric-label">DAILY ALERTS TRIAGED</div></div>
-    <div class="metric-card mc-yellow"><div class="metric-val" id="m4">0</div><div class="metric-label">CLOUD VULNS REMEDIATED</div></div>
-    <div class="metric-card mc-green"><div class="metric-val" id="m5">0%</div><div class="metric-label">FALSE POSITIVE REDUCTION</div></div>
-    <div class="metric-card mc-blue"><div class="metric-val" id="m6">0</div><div class="metric-label">ASSETS MANAGED</div></div>
-    <div class="metric-card mc-red"><div class="metric-val" id="m7">0h+</div><div class="metric-label">ENG HRS SAVED / WEEK</div></div>
-    <div class="metric-card mc-yellow"><div class="metric-val" id="m8">0M+</div><div class="metric-label">PATIENT RECORDS PROTECTED</div></div>
-  </div>
-  <div class="charts-row">
-    <div class="chart-card"><div class="chart-title">MTTR REDUCTION BY ROLE</div><div class="chart-wrap"><canvas id="mttrChart"></canvas></div></div>
-    <div class="chart-card"><div class="chart-title">SECURITY DOMAIN COVERAGE</div><div class="chart-wrap"><canvas id="domainChart"></canvas></div></div>
-  </div>
-</div>
-
-<!-- SKILLS -->
 <div class="section" id="skills">
-  <div class="section-header"><span class="section-num">04</span><h2 class="section-title">SKILLS &amp; TOOLS</h2><div class="section-line"></div></div>
+  <div class="section-header"><span class="section-num">03</span><h2 class="section-title">SKILLS & TOOLS</h2><div class="section-line"></div></div>
   <div class="skills-grid">
-    <div class="card"><div class="skill-category-title">CLOUD SECURITY &amp; CSPM</div><div class="skill-tags"><span class="tag">AWS Security Hub</span><span class="tag">GuardDuty</span><span class="tag">Inspector</span><span class="tag">Macie</span><span class="tag">CloudTrail</span><span class="tag">Azure Defender</span><span class="tag">GCP SCC</span><span class="tag">Prisma Cloud</span><span class="tag">Wiz</span><span class="tag">Lacework</span><span class="tag">Cloud Custodian</span><span class="tag">CloudFormation Guard</span></div></div>
-    <div class="card"><div class="skill-category-title">SIEM &amp; SECURITY OPS</div><div class="skill-tags"><span class="tag">Splunk ES</span><span class="tag">Microsoft Sentinel</span><span class="tag">IBM QRadar</span><span class="tag">ArcSight</span><span class="tag">Elastic SIEM</span><span class="tag">Databricks</span><span class="tag">CrowdStrike Falcon</span><span class="tag">Defender XDR</span><span class="tag">SOAR</span><span class="tag">UEBA</span></div></div>
-    <div class="card"><div class="skill-category-title">IDENTITY &amp; PAM</div><div class="skill-tags"><span class="tag">Okta</span><span class="tag">Microsoft Entra ID</span><span class="tag">CyberArk</span><span class="tag">BeyondTrust</span><span class="tag">HashiCorp Vault</span><span class="tag">AWS Secrets Manager</span><span class="tag">Tailscale</span><span class="tag">SAML / OIDC / FIDO2</span><span class="tag">SSPM</span><span class="tag">CASB</span></div></div>
-    <div class="card"><div class="skill-category-title">THREAT INTEL &amp; FORENSICS</div><div class="skill-tags"><span class="tag">MITRE ATT&amp;CK</span><span class="tag">MISP</span><span class="tag">ThreatConnect</span><span class="tag">Recorded Future</span><span class="tag">Diamond Model</span><span class="tag">Kill Chain</span><span class="tag">STRIDE</span><span class="tag">Volatility</span><span class="tag">Autopsy</span><span class="tag">Wireshark</span></div></div>
-    <div class="card"><div class="skill-category-title">VULN MGMT &amp; PENTEST</div><div class="skill-tags"><span class="tag">Tenable Cloud Security</span><span class="tag">Qualys VMDR</span><span class="tag">Rapid7 InsightVM</span><span class="tag">Burp Suite Pro</span><span class="tag">Metasploit</span><span class="tag">Nmap</span><span class="tag">Kali Linux</span><span class="tag">HackerOne</span><span class="tag">Bugcrowd</span></div></div>
-    <div class="card"><div class="skill-category-title">DEVSECOPS &amp; CONTAINERS</div><div class="skill-tags"><span class="tag">Terraform</span><span class="tag">Atlantis</span><span class="tag">Kubernetes</span><span class="tag">Docker</span><span class="tag">Aqua Security</span><span class="tag">GitHub Actions</span><span class="tag">Semgrep</span><span class="tag">Snyk</span><span class="tag">Trufflehog</span><span class="tag">Checkov</span><span class="tag">OPA</span><span class="tag">Falco</span></div></div>
-    <div class="card"><div class="skill-category-title">APP SECURITY &amp; PKI</div><div class="skill-tags"><span class="tag">Checkmarx</span><span class="tag">Veracode</span><span class="tag">OWASP Top 10</span><span class="tag">DigiCert</span><span class="tag">AppViewX</span><span class="tag">Akamai WAF</span><span class="tag">AWS WAF</span><span class="tag">F5 LTM/GTM</span><span class="tag">API Security</span><span class="tag">ASPM</span></div></div>
-    <div class="card"><div class="skill-category-title">PROGRAMMING &amp; SCRIPTING</div><div class="skill-tags"><span class="tag">Python</span><span class="tag">Bash</span><span class="tag">PowerShell</span><span class="tag">Go</span><span class="tag">KQL</span><span class="tag">SPL</span><span class="tag">SQL</span><span class="tag">JavaScript</span><span class="tag">Ruby</span></div></div>
-    <div class="card"><div class="skill-category-title">COMPLIANCE &amp; GRC</div><div class="skill-tags"><span class="tag">NIST CSF</span><span class="tag">NIST 800-53</span><span class="tag">HITRUST</span><span class="tag">HIPAA/HITECH</span><span class="tag">SOC 2 Type II</span><span class="tag">PCI-DSS</span><span class="tag">GDPR/CCPA</span><span class="tag">FedRAMP</span><span class="tag">CMMC</span><span class="tag">ISO 27001</span><span class="tag">CIS Controls 18</span></div></div>
-    <div class="card"><div class="skill-category-title">NETWORK &amp; INFRA</div><div class="skill-tags"><span class="tag">Palo Alto NGFW</span><span class="tag">Cisco ASA</span><span class="tag">Fortinet</span><span class="tag">Snort IDS/IPS</span><span class="tag">Google IAP</span><span class="tag">RHEL Hardening</span><span class="tag">VMware</span><span class="tag">CIS 18 Baseline</span><span class="tag">Windows Server</span></div></div>
-    <div class="card"><div class="skill-category-title">AI &amp; AUTOMATION</div><div class="skill-tags"><span class="tag">LLM Security</span><span class="tag">AI Risk Assessment</span><span class="tag">Prompt Injection Defense</span><span class="tag">SOC Automation</span><span class="tag">Power BI</span><span class="tag">Sigma</span><span class="tag">Snowflake</span><span class="tag">Jira Automation</span></div></div>
-    <div class="card"><div class="skill-category-title">DLP &amp; DATA PROTECTION</div><div class="skill-tags"><span class="tag">Microsoft Purview</span><span class="tag">Symantec DLP</span><span class="tag">McAfee DLP</span><span class="tag">AES-256</span><span class="tag">Key Management</span><span class="tag">Tokenization</span><span class="tag">CASB</span></div></div>
+    <div class="card"><div class="skill-category-title">CLOUD SECURITY & CSPM</div><div class="skill-tags"><span class="tag">AWS Security Hub</span><span class="tag">GuardDuty</span><span class="tag">Inspector</span><span class="tag">Macie</span><span class="tag">CloudTrail</span><span class="tag">Azure Defender</span><span class="tag">Prisma Cloud</span><span class="tag">Wiz</span><span class="tag">Lacework</span><span class="tag">CNAPP</span><span class="tag">CWPP</span></div></div>
+    <div class="card"><div class="skill-category-title">SIEM & SECURITY MONITORING</div><div class="skill-tags"><span class="tag">Splunk</span><span class="tag">Microsoft Sentinel</span><span class="tag">IBM QRadar</span><span class="tag">ArcSight</span><span class="tag">CrowdStrike Falcon</span><span class="tag">Defender XDR</span><span class="tag">SOAR</span><span class="tag">UEBA</span></div></div>
+    <div class="card"><div class="skill-category-title">EDR/XDR & ENDPOINT</div><div class="skill-tags"><span class="tag">CrowdStrike Falcon</span><span class="tag">SentinelOne</span><span class="tag">Palo Alto Cortex XDR</span><span class="tag">Carbon Black</span><span class="tag">Defender for Endpoint</span></div></div>
+    <div class="card"><div class="skill-category-title">THREAT INTELLIGENCE & IR</div><div class="skill-tags"><span class="tag">MITRE ATT&amp;CK</span><span class="tag">MISP</span><span class="tag">TheHive</span><span class="tag">STIX/TAXII</span><span class="tag">Recorded Future</span><span class="tag">VirusTotal</span><span class="tag">Shodan</span></div></div>
+    <div class="card"><div class="skill-category-title">VULNERABILITY MGMT & PENTEST</div><div class="skill-tags"><span class="tag">Tenable Cloud Security</span><span class="tag">Qualys VMDR</span><span class="tag">Rapid7 InsightVM</span><span class="tag">Burp Suite Pro</span><span class="tag">Metasploit</span><span class="tag">Nmap</span><span class="tag">Kali Linux</span></div></div>
+    <div class="card"><div class="skill-category-title">IAM / PAM</div><div class="skill-tags"><span class="tag">Okta</span><span class="tag">Azure AD</span><span class="tag">CyberArk</span><span class="tag">BeyondTrust</span><span class="tag">HashiCorp Vault</span><span class="tag">Microsoft Purview</span><span class="tag">Zero Trust</span></div></div>
+    <div class="card"><div class="skill-category-title">DEVSECOPS & CONTAINERS</div><div class="skill-tags"><span class="tag">Terraform</span><span class="tag">Kubernetes</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span><span class="tag">Azure DevOps</span><span class="tag">Snyk</span><span class="tag">Checkov</span><span class="tag">OPA</span><span class="tag">Falco</span></div></div>
+    <div class="card"><div class="skill-category-title">APP SECURITY (SAST/DAST)</div><div class="skill-tags"><span class="tag">Checkmarx</span><span class="tag">Veracode</span><span class="tag">Semgrep</span><span class="tag">OWASP Top 10</span><span class="tag">Nuclei</span><span class="tag">Supply Chain Security</span></div></div>
+    <div class="card"><div class="skill-category-title">PROGRAMMING & SCRIPTING</div><div class="skill-tags"><span class="tag">Python</span><span class="tag">Bash</span><span class="tag">PowerShell</span><span class="tag">Go</span><span class="tag">KQL</span><span class="tag">SQL</span><span class="tag">JavaScript</span></div></div>
+    <div class="card"><div class="skill-category-title">COMPLIANCE & GRC</div><div class="skill-tags"><span class="tag">NIST CSF</span><span class="tag">NIST 800-53</span><span class="tag">HITRUST</span><span class="tag">SOC 2 Type II</span><span class="tag">PCI-DSS</span><span class="tag">HIPAA</span><span class="tag">GDPR</span><span class="tag">SOX ITGC</span></div></div>
+    <div class="card"><div class="skill-category-title">DLP & DATA PROTECTION</div><div class="skill-tags"><span class="tag">Microsoft Purview</span><span class="tag">Symantec DLP</span><span class="tag">McAfee DLP</span><span class="tag">Encryption</span><span class="tag">Tokenization</span><span class="tag">Key Management</span></div></div>
+    <div class="card"><div class="skill-category-title">EMERGING TECHNOLOGIES</div><div class="skill-tags"><span class="tag">LLM Security</span><span class="tag">GenAI Security</span><span class="tag">Prompt Injection Defense</span><span class="tag">SOC Automation</span><span class="tag">Threat Detection Engineering</span></div></div>
   </div>
 </div>
 
-<!-- LIVE THREAT INTEL -->
-<div class="section" id="threat">
-  <div class="section-header"><span class="section-num">05</span><h2 class="section-title">LIVE THREAT INTEL</h2><div class="section-line"></div></div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
-    <div class="threat-feed">
-      <div class="threat-header">
-        <div style="font-family:var(--font-mono);font-size:12px;color:var(--accent2);letter-spacing:2px">IOC FEED</div>
-        <div class="threat-status"><span class="pulse-dot"></span>LIVE</div>
-      </div>
-      <div class="threat-ticker"><div id="ioc-list" style="display:flex;flex-direction:column"></div></div>
-    </div>
-    <div class="threat-feed">
-      <div class="threat-header">
-        <div style="font-family:var(--font-mono);font-size:12px;color:var(--accent3);letter-spacing:2px">HIGH-SEVERITY CVEs</div>
-        <div class="threat-status"><span class="pulse-dot" style="background:var(--accent3)"></span>NVD FEED</div>
-      </div>
-      <div class="cve-grid" id="cve-list"></div>
-    </div>
-  </div>
-  <div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);margin-top:10px;text-align:right">// Simulated threat intelligence feed -- mirrors real IOC/CVE analyst workflows</div>
-</div>
-
-<!-- PROJECTS -->
 <div class="section" id="projects">
-  <div class="section-header"><span class="section-num">06</span><h2 class="section-title">PROJECTS</h2><div class="section-line"></div></div>
+  <div class="section-header"><span class="section-num">04</span><h2 class="section-title">PROJECTS</h2><div class="section-line"></div></div>
   <div class="projects-grid">
+
     <div class="card project-card soc-card">
       <div style="margin-bottom:18px">
         <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
           <div style="display:flex;align-items:center;gap:12px">
-            <span style="font-size:28px">&#128737;</span>
+            <span style="font-size:28px">🛡️</span>
             <div>
-              <div class="project-name" style="font-size:16px;color:var(--accent2)">Home SOC Lab -- Threat Detection with Splunk SIEM</div>
-              <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted);margin-top:3px">SECURITY OPERATIONS &middot; SIEM &middot; MITRE ATT&amp;CK</div>
+              <div class="project-name" style="font-size:16px;color:var(--accent2)">Home SOC Lab — Threat Detection with Splunk SIEM</div>
+              <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted);margin-top:3px">SECURITY OPERATIONS · SIEM · MITRE ATT&amp;CK</div>
             </div>
           </div>
-          <span class="project-badge-new">&#9889; LIVE LAB</span>
+          <span class="project-badge-new">⚡ LIVE LAB</span>
         </div>
       </div>
       <div class="soc-inner">
@@ -413,13 +282,13 @@
           <p class="project-desc">Built a fully functional 3-VM isolated SOC environment simulating real enterprise attack and detection scenarios with live Splunk SIEM ingestion, Sysmon telemetry, and 4 custom detection rules mapped to MITRE ATT&amp;CK.</p>
           <div class="soc-arch">
             <span class="vm-win">Windows 10</span> <span class="arrow">192.168.10.10</span><br>
-            <span style="color:var(--muted)">&nbsp;&nbsp;Sysmon v15 &middot; Splunk UF</span><br>
-            <span class="arrow">&nbsp;&nbsp;| logs > port 9997</span><br>
+            <span style="color:var(--muted)">  Sysmon v15 · Splunk UF</span><br>
+            <span class="arrow">  │ logs → port 9997</span><br>
             <span class="vm-kali">Kali Linux</span> <span class="arrow">192.168.10.20</span><br>
-            <span style="color:var(--muted)">&nbsp;&nbsp;Attacker machine</span><br>
-            <span class="arrow">&nbsp;&nbsp;|</span><br>
+            <span style="color:var(--muted)">  Attacker machine</span><br>
+            <span class="arrow">  │</span><br>
             <span class="vm-splunk">Ubuntu Splunk</span> <span class="arrow">192.168.10.30:8000</span><br>
-            <span style="color:var(--muted)">&nbsp;&nbsp;SIEM &middot; Indexes &middot; Alerts</span>
+            <span style="color:var(--muted)">  SIEM · Indexes · Alerts</span>
           </div>
           <div class="mitre-tags">
             <span class="mitre-tag">T1110 Brute Force</span>
@@ -436,376 +305,134 @@
             <div class="soc-metric"><div class="soc-metric-val">4,042</div><div class="soc-metric-label">SECURITY EVENTS</div></div>
           </div>
           <ul class="project-bullets" style="margin-top:16px">
-            <li>3-VM isolated VirtualBox lab -- Windows, Kali, Ubuntu</li>
+            <li>3-VM isolated VirtualBox lab — Windows, Kali, Ubuntu</li>
             <li>Splunk Enterprise SIEM with live log ingestion</li>
             <li>Sysmon v15.20 with SwiftOnSecurity config</li>
-            <li>4 SPL rules -- automated 5-min alerting via cron</li>
+            <li>4 SPL rules — automated 5-min alerting via cron</li>
             <li>Live SOC dashboard in Splunk Dashboard Studio</li>
           </ul>
-          <div class="project-tech" style="margin-top:14px"><span class="tech-pill">Splunk</span><span class="tech-pill">Sysmon</span><span class="tech-pill">VirtualBox</span><span class="tech-pill">Kali Linux</span><span class="tech-pill">SPL</span><span class="tech-pill">MITRE ATT&amp;CK</span></div>
-          <div style="margin-top:16px"><a href="https://github.com/raj-1819/Home-SOC-Lab-Splunk-SIEM" target="_blank" class="btn btn-outline" style="font-size:12px;padding:8px 16px;border-color:var(--accent2);color:var(--accent2)">View on GitHub &#8599;</a></div>
+          <div class="project-tech" style="margin-top:14px">
+            <span class="tech-pill">Splunk</span><span class="tech-pill">Sysmon</span><span class="tech-pill">VirtualBox</span><span class="tech-pill">Kali Linux</span><span class="tech-pill">SPL</span><span class="tech-pill">MITRE ATT&amp;CK</span>
+          </div>
+          <div style="margin-top:16px">
+            <a href="https://github.com/raj-1819/Home-SOC-Lab-Splunk-SIEM" target="_blank" class="btn btn-outline" style="font-size:12px;padding:8px 16px;border-color:var(--accent2);color:var(--accent2)">View on GitHub ↗</a>
+          </div>
         </div>
       </div>
     </div>
+
     <div class="card project-card capstone-card">
       <div style="margin-bottom:16px">
         <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
           <div style="display:flex;align-items:center;gap:12px">
-            <span style="font-size:28px">&#129302;</span>
+            <span style="font-size:28px">🤖</span>
             <div>
               <div class="project-name" style="font-size:16px">ML-Driven Email Phishing Detection System</div>
-              <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted);margin-top:3px">CAPSTONE PROJECT &middot; ML &middot; SECURITY AUTOMATION</div>
+              <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted);margin-top:3px">CAPSTONE PROJECT · ML · SECURITY AUTOMATION</div>
             </div>
           </div>
-          <span class="project-badge">&#11088; FEATURED</span>
+          <span class="project-badge">⭐ FEATURED</span>
         </div>
       </div>
       <div class="capstone-inner">
         <div>
           <p class="project-desc">Real-time phishing and BEC detection pipeline using TF-IDF and Random Forest trained on 10,000 emails; integrated IMAP monitoring with OCR and URL/domain risk scoring; built live forensic dashboard with analyst-ready KPIs.</p>
-          <ul class="project-bullets"><li>URL, sender, and domain risk scoring engine</li><li>OCR-based detection for image-based phishing</li><li>Live forensic dashboard with analyst-ready KPIs</li></ul>
+          <ul class="project-bullets">
+            <li>URL, sender, and domain risk scoring engine</li>
+            <li>OCR-based detection for image-based phishing</li>
+            <li>Live forensic dashboard with analyst-ready KPIs</li>
+          </ul>
         </div>
         <div>
-          <ul class="project-bullets"><li>Random Forest + TF-IDF ML pipeline</li><li>IMAP IDLE real-time inbox monitoring</li><li>Automated forensic report generation</li><li>Zero false-negative design approach</li></ul>
-          <div class="project-tech" style="margin-top:14px"><span class="tech-pill">Python</span><span class="tech-pill">Scikit-Learn</span><span class="tech-pill">IMAP</span><span class="tech-pill">OCR</span><span class="tech-pill">TF-IDF</span><span class="tech-pill">Random Forest</span></div>
-          <div style="margin-top:14px"><a href="https://github.com/raj-1819" target="_blank" class="btn btn-outline" style="font-size:12px;padding:8px 16px">View on GitHub &#8599;</a></div>
+          <ul class="project-bullets">
+            <li>Random Forest + TF-IDF ML pipeline</li>
+            <li>IMAP IDLE real-time inbox monitoring</li>
+            <li>Automated forensic report generation</li>
+            <li>Zero false-negative design approach</li>
+          </ul>
+          <div class="project-tech" style="margin-top:14px">
+            <span class="tech-pill">Python</span><span class="tech-pill">Scikit-Learn</span><span class="tech-pill">IMAP</span><span class="tech-pill">OCR</span><span class="tech-pill">TF-IDF</span><span class="tech-pill">Random Forest</span>
+          </div>
+          <div style="margin-top:14px">
+            <a href="https://github.com/raj-1819" target="_blank" class="btn btn-outline" style="font-size:12px;padding:8px 16px">View on GitHub ↗</a>
+          </div>
         </div>
       </div>
     </div>
+
     <div class="card project-card">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><span style="font-size:22px">&#127973;</span><div class="project-name">Risk Assessment in Healthcare Organization</div></div>
-      <ul class="project-bullets" style="margin-bottom:16px"><li>Mapped 15+ vulnerabilities to NIST CSF across 3 healthcare systems</li><li>Applied FMEA to prioritize risks, driving 3 critical security patches</li><li>Reduced detection time by 35% via automated monitoring protocol</li><li>Ensured HIPAA compliance through access control audits</li></ul>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+        <span style="font-size:22px">🏥</span><div class="project-name">Risk Assessment in Healthcare Organization</div>
+      </div>
+      <ul class="project-bullets" style="margin-bottom:16px">
+        <li>Mapped 15+ vulnerabilities to NIST CSF across 3 healthcare systems</li>
+        <li>Applied FMEA to prioritize risks, driving 3 critical security patches</li>
+        <li>Reduced detection time by 35% via automated monitoring protocol</li>
+        <li>Ensured HIPAA compliance through access control audits</li>
+      </ul>
       <div class="project-tech"><span class="tech-pill">NIST CSF</span><span class="tech-pill">FMEA</span><span class="tech-pill">HIPAA</span><span class="tech-pill">Risk Analysis</span></div>
     </div>
+
     <div class="card project-card">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><span style="font-size:22px">&#128272;</span><div class="project-name">Secure Messaging &amp; HIPAA Privacy Audit</div></div>
-      <ul class="project-bullets" style="margin-bottom:16px"><li>Audited 3 HIPAA-compliant messaging apps, uncovering 10 vulnerabilities</li><li>Reduced data breach risk by 30% through remediation recommendations</li><li>Engineered secure architecture with AES-256 and TLS 1.3</li><li>NIST threat modeling cutting attack surface by 20%</li></ul>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+        <span style="font-size:22px">🔐</span><div class="project-name">Secure Messaging &amp; HIPAA Privacy Audit</div>
+      </div>
+      <ul class="project-bullets" style="margin-bottom:16px">
+        <li>Audited 3 HIPAA-compliant messaging apps, uncovering 10 vulnerabilities</li>
+        <li>Reduced data breach risk by 30% through remediation recommendations</li>
+        <li>Engineered secure architecture with AES-256 and TLS 1.3</li>
+        <li>NIST threat modeling cutting attack surface by 20%</li>
+      </ul>
       <div class="project-tech"><span class="tech-pill">AES-256</span><span class="tech-pill">TLS 1.3</span><span class="tech-pill">NIST</span><span class="tech-pill">Threat Modeling</span></div>
     </div>
+
   </div>
 </div>
 
-<!-- WRITEUPS -->
-<div class="section" id="writeups">
-  <div class="section-header"><span class="section-num">07</span><h2 class="section-title">SECURITY WRITEUPS</h2><div class="section-line"></div></div>
-  <div class="writeup-grid">
-    <div class="card writeup-card writeup-featured">
-      <div class="writeup-featured-left">
-        <span class="writeup-tag tag-detection">// DETECTION ENGINEERING</span>
-        <div class="writeup-title">Building Brute-Force Detection in Splunk SPL -- From Raw Logs to Actionable Alerts</div>
-        <div class="writeup-excerpt">Step-by-step breakdown of the detection logic built in my Home SOC Lab: parsing Windows Security Event 4625, correlating failed logon attempts against time windows, and tuning thresholds to cut false positives while maintaining 100% detection rate across T1110 scenarios.</div>
-        <div class="writeup-meta"><span>// 8 min read</span><span>Splunk &middot; SPL &middot; MITRE T1110</span></div>
-      </div>
-      <div class="writeup-featured-code">
-        <div class="code-comment">| DETECTION: Windows Brute Force (T1110)</div>
-        <div class="code-comment">| Author: Rajkumar Jangam</div><br>
-        <div><span class="code-keyword">index</span>=<span class="code-string">windows</span> <span class="code-keyword">EventCode</span>=<span class="code-var">4625</span></div>
-        <div><span class="code-keyword">| bucket</span> <span class="code-var">_time</span> span=<span class="code-var">5m</span></div>
-        <div><span class="code-keyword">| stats</span> count as <span class="code-var">failures</span></div>
-        <div>&nbsp;values(<span class="code-var">Workstation_Name</span>) as <span class="code-var">hosts</span></div>
-        <div>&nbsp;by <span class="code-var">_time Account_Name src_ip</span></div>
-        <div><span class="code-keyword">| where</span> <span class="code-var">failures</span> &gt; <span class="code-var">10</span></div>
-        <div><span class="code-keyword">| eval</span> <span class="code-var">severity</span>=<span class="code-string">"HIGH"</span></div>
-        <div><span class="code-keyword">| table</span> <span class="code-var">_time src_ip Account_Name</span></div>
-        <div>&nbsp;&nbsp;<span class="code-var">failures hosts severity</span></div><br>
-        <div class="code-comment">| Result: 0 false positives / 30-day run</div>
-        <div class="code-comment">| Detected: 4 simulated brute-force events</div>
-      </div>
-    </div>
-    <div class="card writeup-card">
-      <span class="writeup-tag tag-cloud">// CLOUD SECURITY</span>
-      <div class="writeup-title">S3 Bucket Misconfiguration Deep Dive -- How Public ACLs Slip Past Teams and How to Stop Them</div>
-      <div class="writeup-excerpt">A real-world pattern I encounter repeatedly: S3 buckets with public ACLs surviving permission boundary changes. Walkthrough of detection using GuardDuty, AWS Config rules, and a Terraform Guard policy enforcing S3 Block Public Access at deploy time.</div>
-      <div class="writeup-meta"><span>// 6 min read</span><span>AWS &middot; Terraform &middot; GuardDuty</span></div>
-    </div>
-    <div class="card writeup-card">
-      <span class="writeup-tag tag-threat">// THREAT INTELLIGENCE</span>
-      <div class="writeup-title">Diamond Model Analysis -- Mapping a Ransomware Campaign from IOC to Threat Actor Attribution</div>
-      <div class="writeup-excerpt">Using the Diamond Model to work backwards from a Cobalt Strike beacon IOC through infrastructure pivoting, TTP correlation, and MISP clustering to attribute activity to a known financial crime group. Includes the MITRE ATT&amp;CK Navigator layer.</div>
-      <div class="writeup-meta"><span>// 10 min read</span><span>Diamond Model &middot; MISP &middot; ATT&amp;CK</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- CERTS -->
 <div class="section" id="certs">
-  <div class="section-header"><span class="section-num">08</span><h2 class="section-title">CERTIFICATIONS</h2><div class="section-line"></div></div>
+  <div class="section-header"><span class="section-num">05</span><h2 class="section-title">CERTIFICATIONS</h2><div class="section-line"></div></div>
   <div class="certs-row">
-    <div class="card cert-card"><span class="cert-icon">&#128737;</span><div><div class="cert-name">CISSP</div><div class="cert-issuer">(ISC)2</div><div class="cert-status">&#9679; Active</div></div></div>
-    <div class="card cert-card"><span class="cert-icon">&#9876;</span><div><div class="cert-name">OSCP</div><div class="cert-issuer">Offensive Security</div><div class="cert-status">&#9679; Active</div></div></div>
-    <div class="card cert-card"><span class="cert-icon">&#9729;</span><div><div class="cert-name">AWS Security Specialty</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-status">&#9679; Active</div></div></div>
-    <div class="card cert-card"><span class="cert-icon">&#9729;</span><div><div class="cert-name">AWS Solutions Architect</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-status">&#9679; Active</div></div></div>
-    <div class="card cert-card"><span class="cert-icon">&#129695;</span><div><div class="cert-name">Microsoft SC-200</div><div class="cert-issuer">Microsoft</div><div class="cert-status">&#9679; Active</div></div></div>
-    <div class="card cert-card"><span class="cert-icon">&#128187;</span><div><div class="cert-name">CEH</div><div class="cert-issuer">EC-Council</div><div class="cert-status">&#9679; Active</div></div></div>
-    <div class="card cert-card"><span class="cert-icon">&#128275;</span><div><div class="cert-name">CompTIA Security+</div><div class="cert-issuer">CompTIA</div><div class="cert-status">&#9679; Active</div></div></div>
-    <div class="card cert-card"><span class="cert-icon">&#128269;</span><div><div class="cert-name">CompTIA CySA+</div><div class="cert-issuer">CompTIA</div><div class="cert-status">&#9679; Active</div></div></div>
+    <div class="card cert-card"><span class="cert-icon">🛡️</span><div><div class="cert-name">CISSP</div><div class="cert-issuer">(ISC)²</div><div class="cert-status">● Active</div></div></div>
+    <div class="card cert-card"><span class="cert-icon">⚔️</span><div><div class="cert-name">OSCP</div><div class="cert-issuer">Offensive Security</div><div class="cert-status">● Active</div></div></div>
+    <div class="card cert-card"><span class="cert-icon">☁️</span><div><div class="cert-name">AWS Security – Specialty</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-status">● Active</div></div></div>
+    <div class="card cert-card"><span class="cert-icon">☁️</span><div><div class="cert-name">AWS Solutions Architect</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-status">● Active</div></div></div>
+    <div class="card cert-card"><span class="cert-icon">🪟</span><div><div class="cert-name">Microsoft SC-200</div><div class="cert-issuer">Microsoft</div><div class="cert-status">● Active</div></div></div>
+    <div class="card cert-card"><span class="cert-icon">💻</span><div><div class="cert-name">CEH</div><div class="cert-issuer">EC-Council</div><div class="cert-status">● Active</div></div></div>
+    <div class="card cert-card"><span class="cert-icon">🔓</span><div><div class="cert-name">CompTIA Security+</div><div class="cert-issuer">CompTIA</div><div class="cert-status">● Active</div></div></div>
+    <div class="card cert-card"><span class="cert-icon">🔍</span><div><div class="cert-name">CompTIA CySA+</div><div class="cert-issuer">CompTIA</div><div class="cert-status">● Active</div></div></div>
   </div>
 </div>
 
-<!-- ANALYTICS -->
-<div class="section" id="analytics">
-  <div class="section-header"><span class="section-num">09</span><h2 class="section-title">PROFILE ANALYTICS</h2><div class="section-line"></div></div>
-  <div class="analytics-bar">
-    <div class="analytics-row">
-      <div class="analytics-stat"><div class="analytics-val" id="a-total">0</div><div class="analytics-label">TOTAL VIEWS</div></div>
-      <div class="analytics-stat"><div class="analytics-val" id="a-today">0</div><div class="analytics-label">TODAY</div></div>
-      <div class="analytics-stat"><div class="analytics-val" id="a-week">0</div><div class="analytics-label">THIS WEEK</div></div>
-      <div class="analytics-stat"><div class="analytics-val" id="a-unique">0</div><div class="analytics-label">SESSIONS</div></div>
-    </div>
-    <div class="referrer-row">
-      <span style="font-family:var(--font-mono);font-size:10px;color:var(--muted);margin-right:4px">TRAFFIC SOURCE:</span>
-      <span class="ref-badge" id="ref-linkedin">LinkedIn</span>
-      <span class="ref-badge" id="ref-direct">Direct</span>
-      <span class="ref-badge" id="ref-github">GitHub</span>
-      <span class="ref-badge" id="ref-search">Search</span>
-    </div>
-    <div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);margin-top:12px">// Session tracking via localStorage -- persists across visits on this device. For real multi-user analytics, integrate Google Analytics or Plausible.</div>
-  </div>
-</div>
-
-<!-- CONTACT -->
 <div class="section" id="contact">
-  <div class="section-header"><span class="section-num">10</span><h2 class="section-title">CONTACT</h2><div class="section-line"></div></div>
+  <div class="section-header"><span class="section-num">06</span><h2 class="section-title">CONTACT</h2><div class="section-line"></div></div>
   <div class="card" style="margin-bottom:20px">
-    <p style="font-size:17px;line-height:1.7;margin-bottom:0">Actively seeking roles in <strong style="color:var(--accent)">Cloud Security Engineering</strong>, <strong style="color:var(--accent)">Detection Engineering</strong>, and <strong style="color:var(--accent)">Security Operations</strong> at healthcare, financial services, and cloud-native companies. Open to relocation -- Texas, Florida, Washington, and Tennessee preferred.</p>
+    <p style="font-size:17px;line-height:1.7;margin-bottom:0">I'm actively seeking roles in <strong style="color:var(--accent)">Cloud Security Engineering</strong>, <strong style="color:var(--accent)">Detection Engineering</strong>, and <strong style="color:var(--accent)">Security Operations</strong> at healthcare, financial services, and cloud-native companies. Feel free to reach out — let's connect.</p>
   </div>
   <div class="card">
     <div class="contact-grid">
-      <div class="contact-item"><div class="contact-icon">&#128231;</div><div><div class="contact-label">EMAIL</div><div class="contact-val"><a href="mailto:rajkumarjangam1710@gmail.com">rajkumarjangam1710@gmail.com</a></div></div></div>
-      <div class="contact-item"><div class="contact-icon">&#128222;</div><div><div class="contact-label">PHONE</div><div class="contact-val">203-410-9894</div></div></div>
-      <div class="contact-item"><div class="contact-icon">&#128188;</div><div><div class="contact-label">LINKEDIN</div><div class="contact-val"><a href="https://www.linkedin.com/in/rajkumar-jangam-559827228/" target="_blank">linkedin.com/in/rajkumar-jangam</a></div></div></div>
-      <div class="contact-item"><div class="contact-icon">&#128056;</div><div><div class="contact-label">GITHUB</div><div class="contact-val"><a href="https://github.com/raj-1819" target="_blank">github.com/raj-1819</a></div></div></div>
-      <div class="contact-item"><div class="contact-icon">&#127760;</div><div><div class="contact-label">PORTFOLIO</div><div class="contact-val"><a href="https://raj-1819.github.io/Portfolio/" target="_blank">raj-1819.github.io/Portfolio</a></div></div></div>
-      <div class="contact-item"><div class="contact-icon">&#128205;</div><div><div class="contact-label">LOCATION</div><div class="contact-val">Prospect, CT 06712</div></div></div>
+      <div class="contact-item"><div class="contact-icon">✉️</div><div><div class="contact-label">EMAIL</div><div class="contact-val"><a href="mailto:rajkumarjangam1710@gmail.com">rajkumarjangam1710@gmail.com</a></div></div></div>
+      <div class="contact-item"><div class="contact-icon">📞</div><div><div class="contact-label">PHONE</div><div class="contact-val">203-410-9894</div></div></div>
+      <div class="contact-item"><div class="contact-icon">💼</div><div><div class="contact-label">LINKEDIN</div><div class="contact-val"><a href="https://www.linkedin.com/in/rajkumar-jangam-559827228/" target="_blank">linkedin.com/in/rajkumar-jangam</a></div></div></div>
+      <div class="contact-item"><div class="contact-icon">🐙</div><div><div class="contact-label">GITHUB</div><div class="contact-val"><a href="https://github.com/raj-1819" target="_blank">github.com/raj-1819</a></div></div></div>
+      <div class="contact-item"><div class="contact-icon">🌐</div><div><div class="contact-label">PORTFOLIO</div><div class="contact-val"><a href="https://raj-1819.github.io/Portfolio/" target="_blank">raj-1819.github.io/Portfolio</a></div></div></div>
+      <div class="contact-item"><div class="contact-icon">📍</div><div><div class="contact-label">LOCATION</div><div class="contact-val">Prospect, CT 06712</div></div></div>
     </div>
   </div>
 </div>
 
 <footer>
-  <p>Built by <span>Rajkumar Jangam</span> &middot; Cloud Security Engineer &middot; Prospect, CT &middot; 2026</p>
-  <p style="margin-top:8px;font-size:11px;opacity:0.5">// CISSP &middot; OSCP &middot; AWS Security &middot; SC-200 &middot; CEH &middot; CySA+</p>
+  <p>Built by <span>Rajkumar Jangam</span> · Cloud Security Engineer · Prospect, CT · 2026</p>
+  <p style="margin-top:8px;font-size:11px;opacity:0.5">// CISSP · OSCP · AWS Security · SC-200 · CEH · CySA+</p>
 </footer>
 
-<!-- AI BOT -->
-<button id="ai-btn" onclick="toggleAI()"><span class="btn-dot"></span>&gt;_ ASK RJ</button>
-<div id="ai-panel">
-  <div class="ai-header">
-    <div class="ai-header-left">
-      <div class="ai-avatar">RJ</div>
-      <div><div class="ai-title">RJ_ASSIST</div><div class="ai-sub">// Ask about Rajkumar's background</div></div>
-    </div>
-    <button class="ai-close" onclick="toggleAI()">x</button>
-  </div>
-  <div class="ai-messages" id="ai-messages">
-    <div class="msg msg-bot">Secure channel initialized.<br><br>Hi -- I'm Rajkumar's AI assistant. Ask me anything about his experience, cloud security skills, certifications, or projects and I'll give you a real answer grounded in his actual background.</div>
-  </div>
-  <div class="ai-suggestions" id="ai-chips">
-    <button class="ai-chip" onclick="askChip(this)">HIPAA experience?</button>
-    <button class="ai-chip" onclick="askChip(this)">Zero Trust depth?</button>
-    <button class="ai-chip" onclick="askChip(this)">AWS vs Azure?</button>
-    <button class="ai-chip" onclick="askChip(this)">Certifications?</button>
-    <button class="ai-chip" onclick="askChip(this)">Splunk/KQL skills?</button>
-    <button class="ai-chip" onclick="askChip(this)">DevSecOps tools?</button>
-  </div>
-  <div class="ai-input-row">
-    <input class="ai-input" id="ai-input" type="text" placeholder="> ask anything..." onkeydown="if(event.key==='Enter')sendAI()"/>
-    <button class="ai-send" id="ai-send" onclick="sendAI()">SEND</button>
-  </div>
-</div>
-
 <script>
-// TYPEWRITER
-const phrases=['Cloud Security Engineer \u00b7 Aetna','M.S. Cybersecurity \u00b7 Quinnipiac','CISSP \u00b7 OSCP \u00b7 AWS Security \u00b7 SC-200','Zero Trust \u00b7 CSPM \u00b7 Detection Engineering','AWS \u00b7 Azure \u00b7 GCP \u00b7 Prisma Cloud \u00b7 Wiz','DevSecOps \u00b7 IaC \u00b7 Supply Chain Security'];
-let pi=0,ci=0,del=false;
-const twEl=document.getElementById('typewriter');
-function type(){const p=phrases[pi];if(!del){twEl.innerHTML=p.slice(0,ci+1)+'<span class="cursor">_</span>';ci++;if(ci===p.length){del=true;setTimeout(type,2000);return}}else{twEl.innerHTML=p.slice(0,ci-1)+'<span class="cursor">_</span>';ci--;if(ci===0){del=false;pi=(pi+1)%phrases.length}}setTimeout(type,del?40:70);}
-type();
-
-// SCROLL OBSERVER
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:0.1});
-document.querySelectorAll('.card,.section-header').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition='opacity 0.5s ease,transform 0.5s ease';obs.observe(el);});
-
-// MONTHS AT AETNA COUNTER
-const startDate=new Date('2026-02-01');
-const months=Math.max(Math.floor((new Date()-startDate)/(1000*60*60*24*30.44)),1);
-document.getElementById('months-counter').textContent=months;
-
-// ANIMATED METRICS
-function animCounter(id,target,suffix){
-  const el=document.getElementById(id);
-  let v=0;
-  const step=target/60;
-  const iv=setInterval(()=>{v=Math.min(v+step,target);el.textContent=Math.floor(v)+suffix;if(v>=target)clearInterval(iv);},30);
-}
-const mObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      animCounter('m1',45,'%');animCounter('m2',95,'%');animCounter('m3',400,'+');animCounter('m4',500,'+');
-      animCounter('m5',40,'%');animCounter('m6',5000,'+');animCounter('m7',25,'h+');animCounter('m8',2,'M+');
-      mObs.unobserve(e.target);
-    }
-  });
-},{threshold:0.2});
-mObs.observe(document.getElementById('metrics'));
-
-// CHARTS
-window.addEventListener('load',()=>{
-  const g={color:'rgba(10,42,58,0.9)'},t={color:'#4a7a8a',font:{family:'Share Tech Mono',size:10}};
-  new Chart(document.getElementById('mttrChart').getContext('2d'),{
-    type:'bar',
-    data:{labels:['Aetna (Cloud IR)','Lincoln (SOC)','TCS (SOC)'],
-      datasets:[{label:'Before',data:[100,100,100],backgroundColor:'rgba(255,60,90,0.25)',borderColor:'rgba(255,60,90,0.7)',borderWidth:1},
-               {label:'After (indexed)',data:[65,70,70],backgroundColor:'rgba(0,229,255,0.25)',borderColor:'rgba(0,229,255,0.7)',borderWidth:1}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#4a7a8a',font:{family:'Share Tech Mono',size:10}}}},
-      scales:{x:{ticks:t,grid:g},y:{ticks:{...t,callback:v=>v+'%'},grid:g,min:0,max:110}}}
-  });
-  new Chart(document.getElementById('domainChart').getContext('2d'),{
-    type:'radar',
-    data:{labels:['Cloud Security','Detection Eng','Threat Intel','AppSec/DevSecOps','Compliance/GRC','IR & Forensics'],
-      datasets:[{label:'Proficiency',data:[95,90,85,85,92,88],backgroundColor:'rgba(0,229,255,0.08)',borderColor:'rgba(0,229,255,0.6)',borderWidth:2,pointBackgroundColor:'#00e5ff',pointRadius:4}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
-      scales:{r:{ticks:{display:false},grid:g,pointLabels:t,min:0,max:100,angleLines:g}}}
-  });
-});
-
-// THREAT FEED
-const iocData=[
-  {sev:'CRITICAL',type:'Ransomware',ioc:'185.220.101.47',t:0},
-  {sev:'HIGH',type:'Phishing',ioc:'credential-verify-portal.xyz',t:1},
-  {sev:'CRITICAL',type:'C2 Beacon',ioc:'194.165.16.82',t:2},
-  {sev:'MEDIUM',type:'Port Scan',ioc:'162.55.191.98',t:3},
-  {sev:'HIGH',type:'Malware',ioc:'update-microsoft-patch.com',t:4},
-  {sev:'CRITICAL',type:'Exploit',ioc:'89.248.167.131',t:5},
-  {sev:'HIGH',type:'BEC',ioc:'invoices-secure.net',t:6},
-  {sev:'MEDIUM',type:'Brute Force',ioc:'45.9.148.203',t:7},
-  {sev:'HIGH',type:'APT C2',ioc:'secure-update-cdn.io',t:8},
-  {sev:'CRITICAL',type:'Zero-Day PoC',ioc:'CVE-2026-3141 active',t:9},
-];
-const cveData=[
-  {id:'CVE-2026-2873',score:'CVSS 9.8',desc:'RCE in OpenSSH via pre-auth heap overflow'},
-  {id:'CVE-2026-1442',score:'CVSS 9.1',desc:'Privilege escalation in Windows Kernel -- null ptr deref'},
-  {id:'CVE-2026-3318',score:'CVSS 8.8',desc:'Auth bypass in Ivanti Connect Secure VPN'},
-  {id:'CVE-2025-9994',score:'CVSS 8.6',desc:'SSRF in popular OAuth middleware library'},
-];
-function renderIOC(){
-  const list=document.getElementById('ioc-list');list.innerHTML='';
-  iocData.forEach(d=>{
-    const div=document.createElement('div');div.className='threat-item';
-    div.innerHTML=`<span class="threat-sev sev-${d.sev.toLowerCase().replace(' ','-')}">${d.sev}</span><span class="threat-type">${d.type}</span><span class="threat-ioc">${d.ioc}</span><span class="threat-time">${d.t}m ago</span>`;
-    list.appendChild(div);
-  });
-}
-function renderCVE(){
-  const el=document.getElementById('cve-list');el.innerHTML='';
-  cveData.forEach(d=>{
-    const div=document.createElement('div');div.className='cve-item';
-    div.innerHTML=`<div class="cve-id">${d.id}</div><div class="cve-score">${d.score}</div><div class="cve-desc">${d.desc}</div>`;
-    el.appendChild(div);
-  });
-}
-renderIOC();renderCVE();
-setInterval(()=>{
-  iocData.forEach(d=>d.t++);
-  const types=['Phishing','Malware','C2 Beacon','Recon','Exploit','BEC','Credential Theft'];
-  const sevs=['HIGH','CRITICAL','MEDIUM'];
-  const ip=Array.from({length:4},()=>Math.floor(Math.random()*200+10)).join('.');
-  iocData.unshift({sev:sevs[Math.floor(Math.random()*3)],type:types[Math.floor(Math.random()*7)],ioc:ip,t:0});
-  iocData.pop();
-  renderIOC();
-},8000);
-
-// VISITOR ANALYTICS
-(function(){
-  try{
-    const key='rj_v2_analytics';
-    let d=JSON.parse(localStorage.getItem(key)||'{}');
-    const today=new Date().toDateString();
-    const wk=Math.floor(Date.now()/(1000*60*60*24*7));
-    if(!d.total)d={total:0,todayDate:'',today:0,week:0,weekNum:0,sessions:0};
-    if(d.todayDate!==today){d.todayDate=today;d.today=0;}
-    if(d.weekNum!==wk){d.weekNum=wk;d.week=0;}
-    d.total++;d.today++;d.week++;d.sessions++;
-    localStorage.setItem(key,JSON.stringify(d));
-    document.getElementById('a-total').textContent=d.total;
-    document.getElementById('a-today').textContent=d.today;
-    document.getElementById('a-week').textContent=d.week;
-    document.getElementById('a-unique').textContent=d.sessions;
-    document.getElementById('nav-visitors').textContent='\u25cf '+d.total+' views';
-    const ref=document.referrer||'';
-    const activeRef=ref.includes('linkedin')?'ref-linkedin':ref.includes('github')?'ref-github':(ref.includes('google')||ref.includes('bing'))?'ref-search':'ref-direct';
-    document.getElementById(activeRef).classList.add('active');
-  }catch(e){}
-})();
-
-// AI CHAT BOT -- rule-based engine (no external API, works on GitHub Pages)
-const KB=[
-  {k:['hipaa','hitech','healthcare','patient','epic','medical','clinical','phi','hospital'],
-   a:'Rajkumar has deep HIPAA and HITECH hands-on experience from his current role at Aetna, where he protects 2M+ patient records. He has implemented HIPAA technical safeguards, maintained SSPs and POA&Ms, conducted security assessments across Epic EHR environments, and managed medical device security and clinical network segmentation. He also holds prior compliance project work covering Joint Commission and CMS healthcare delivery requirements.'},
-  {k:['zero trust','ztna','zerotrust','conditional access','least privilege'],
-   a:'Rajkumar has implemented Zero Trust Architecture (NIST SP 800-207) end-to-end at Aetna. This includes deploying Microsoft Entra ID Conditional Access, Okta SAML/OIDC/FIDO2, CyberArk and BeyondTrust PAM, HashiCorp Vault for secrets management, Tailscale ZTNA, and Just-in-Time access controls. The result was a 60% reduction in privileged attack surface and elimination of 100% of standing privileged access at Lincoln Financial Group.'},
-  {k:['aws','amazon','s3','ec2','lambda','guardduty','security hub','cloudtrail'],
-   a:'AWS is one of Rajkumar\'s primary platforms. He works daily with Security Hub, GuardDuty, Inspector, Macie, CloudTrail, WAF, Lambda, and AWS Secrets Manager at Aetna. He holds both the AWS Certified Security Specialty and AWS Solutions Architect Associate certifications. He has also built Terraform/Atlantis IaC pipelines with CloudFormation Guard for policy enforcement and Cloud Custodian for compliance-as-code.'},
-  {k:['azure','microsoft','sentinel','defender','entra','kql'],
-   a:'Rajkumar has strong Azure depth -- he holds AZ-500 and SC-200 certifications. He works with Microsoft Sentinel (KQL), Azure Defender, Microsoft Entra ID, Conditional Access, Azure DevOps, Logic Apps, and Azure Key Vault. At Lincoln Financial Group he built KQL detection rules, UEBA models, and automated SOAR playbooks in Sentinel, reducing false positives by 40%.'},
-  {k:['aws vs azure','aws or azure','cloud platform','multi-cloud','gcp'],
-   a:'Rajkumar operates across all three major clouds. AWS is his deepest platform with two AWS certifications and daily hands-on work in GuardDuty, Security Hub, and Inspector. Azure is his second-strongest with AZ-500 and SC-200 certifications and extensive Sentinel/Defender XDR experience. GCP is his third platform, working with GCP Security Command Center and GCP Secret Manager at Aetna. He manages CSPM across all three using Prisma Cloud and Wiz.'},
-  {k:['cert','certification','cissp','oscp','ceh','comptia','security+','cysa'],
-   a:'Rajkumar holds 8 active certifications: CISSP (ISC)2, OSCP (Offensive Security), AWS Security Specialty, AWS Solutions Architect Associate, AZ-500 (Microsoft), SC-200 (Microsoft Security Operations), CEH (EC-Council), CompTIA Security+, and CompTIA CySA+. The CISSP and OSCP combination is particularly rare -- it demonstrates both broad security governance depth and hands-on offensive/red team capability.'},
-  {k:['splunk','spl','qradar','siem','elastic','detection','ueba'],
-   a:'Splunk SPL is one of Rajkumar\'s strongest technical skills. He has built production detection rules, UEBA models, and live SOC dashboards from scratch -- including his Home SOC Lab project where he wrote 4 custom SPL rules detecting T1110 Brute Force, T1059 PowerShell, and T1046 Network Scanning with zero false positives over a 30-day run. At Lincoln he used KQL in Microsoft Sentinel and built ETL pipelines in Elastic and Databricks for anomaly detection.'},
-  {k:['kql','sentinel','microsoft sentinel'],
-   a:'Rajkumar is proficient in KQL (Kusto Query Language) for Microsoft Sentinel. At Lincoln Financial Group he wrote detection rules, UEBA correlation queries, and automated SOAR playbook triggers in Sentinel, contributing to a 40% reduction in false positives and 30% MTTR improvement. He holds the SC-200 Microsoft Security Operations Analyst certification which validates this expertise.'},
-  {k:['devsecops','terraform','pipeline','cicd','ci/cd','shift left','checkov','snyk','semgrep'],
-   a:'Rajkumar has integrated security into 10+ production DevSecOps pipelines at Aetna. His toolchain includes Terraform and Atlantis for IaC, Semgrep SAST, Snyk SCA, Trufflehog for secrets scanning, Checkov and OPA for policy-as-code, Falco for runtime security, and Aqua Security for container protection. He works across GitHub Actions, Jenkins, and Azure DevOps. This is hands-on daily work, not theoretical knowledge.'},
-  {k:['container','kubernetes','docker','k8s','aqua'],
-   a:'Rajkumar manages CNAPP and Kubernetes security at Aetna using Prisma Cloud, Wiz, and Aqua Security. He has remediated 500+ cloud vulnerabilities across containerized workloads, implemented runtime security with Falco, and secured container images through the CI/CD pipeline using Snyk SCA and Checkov. He also works with Docker and OpenShift in multi-cloud environments.'},
-  {k:['threat hunt','threat intel','mitre','att&ck','diamond','kill chain','misp','ioc'],
-   a:'Rajkumar has hands-on threat intelligence and hunting experience across all three roles. He uses MITRE ATT&CK, the Diamond Model, and Kill Chain frameworks for structured analysis. His toolset includes MISP, ThreatConnect, and Recorded Future for IOC correlation, and Volatility, Autopsy, and Wireshark for forensics. At TCS he produced threat intelligence briefings for leadership tracking geopolitical, criminal, and hacktivist threat actor campaigns.'},
-  {k:['incident response','ir','forensic','forensics','mttr','mttd'],
-   a:'Rajkumar has led incident response across all three roles. At Aetna he reduced cloud IR time by 35%. At Lincoln he improved MTTR by 30% and MTTD by 25% through tuned detection rules and SOAR automation. At TCS he maintained a 100% incident resolution rate across 300+ monthly events. His forensic toolkit includes Volatility, Autopsy, and Wireshark for endpoint and memory forensics.'},
-  {k:['compliance','nist','pci','gdpr','sox','fedramp','cmmc','iso 27001','hitrust','soc 2'],
-   a:'Rajkumar covers a wide compliance surface: HIPAA, HITECH, NIST 800-53, NIST CSF, HITRUST, PCI-DSS, SOC 2 Type II, ISO 27001, GDPR, CCPA, SOX ITGC, FedRAMP, CMMC, and CIS Controls 18. At Aetna he maintains SSPs, POA&Ms, and continuous assessment processes. At Lincoln he supported SOC 2, PCI-DSS, GDPR, and SOX audits. At TCS he contributed to SOC 1, SOC 2 Type II, and ISO 27001 certification processes.'},
-  {k:['python','scripting','automation','powershell','bash','go','programming'],
-   a:'Rajkumar automates security operations extensively using Python, PowerShell, Go, and Bash. At Aetna his automation work saves 25+ engineering hours per week -- covering cloud governance, Lambda functions, Azure Functions, and REST API integrations. He also works with KQL, SPL, SQL, JavaScript, and Ruby. He has built Power BI and Snowflake reporting dashboards and Jira workflow automations.'},
-  {k:['experience','background','career','work','job','role','current','aetna','lincoln'],
-   a:'Rajkumar has 4+ years of cybersecurity experience across three roles: Cloud Security Engineer at Aetna (Feb 2026-present) protecting 2M+ patient records; Security Analyst at Lincoln Financial Group (Jul 2024-Dec 2025) triaging 400+ daily alerts; and SOC Analyst at Tata Consultancy Services (Jun 2021-Dec 2023) with 100% incident resolution rate. He holds an M.S. in Cybersecurity from Quinnipiac University with a 3.87 GPA.'},
-  {k:['education','degree','masters','ms','university','quinnipiac','gpa'],
-   a:'Rajkumar holds an M.S. in Cybersecurity from Quinnipiac University, Hamden CT, with a GPA of 3.87/4.0 (completed Dec 2025). His capstone project was an ML-driven email phishing detection system using Random Forest and TF-IDF trained on 10,000 emails. He also holds a B.Tech in Computer Science from KGRCET, Hyderabad, India.'},
-  {k:['contact','email','reach','hire','available','open'],
-   a:'Rajkumar is actively open to new opportunities. You can reach him at rajkumarjangam1710@gmail.com or connect on LinkedIn at linkedin.com/in/rajkumar-jangam-559827228. He is based in Prospect, CT and open to relocation to Texas, Florida, Washington, or Tennessee.'},
-  {k:['pentest','penetration','red team','offensive','oscp','kali','metasploit','bug bounty'],
-   a:'Rajkumar holds the OSCP certification and has hands-on offensive security experience. At TCS he conducted red team exercises and adversarial emulation using Kali Linux, Metasploit, and custom tooling. He has also performed bug bounty triage via HackerOne and Bugcrowd. His OSCP combined with CISSP demonstrates both offensive capability and defensive governance depth -- a rare combination at the engineer level.'},
-  {k:['dlp','data loss','purview','symantec','casb','sspm'],
-   a:'Rajkumar has administered enterprise DLP across multiple platforms: Microsoft Purview, Symantec DLP, and McAfee DLP. He also manages CASB for cloud app visibility, SSPM for SaaS security posture, and OAuth scope governance for shadow IT detection. At Lincoln Financial Group he used Defender for Cloud Apps to protect sensitive financial and customer data across hybrid cloud environments.'},
-  {k:['pki','certificate','digicer','appviewx','ssl','tls'],
-   a:'Rajkumar manages PKI and certificate lifecycle at Aetna using DigiCert and AppViewX. He coordinates secrets rotation with engineering teams across HashiCorp Vault, AWS Secrets Manager, Azure Key Vault, and GCP Secret Manager. He also administers Akamai WAF, AWS WAF, Palo Alto NGFW, and F5 LTM/GTM for perimeter and application layer protection.'},
-];
-
-function getRulesAnswer(q){
-  const lower=q.toLowerCase();
-  for(const rule of KB){
-    if(rule.k.some(k=>lower.includes(k))) return rule.a;
-  }
-  return 'Good question. Rajkumar has 4+ years of hands-on cybersecurity experience across Cloud Security Engineering, Detection Engineering, Incident Response, and DevSecOps at Aetna and Lincoln Financial Group. He holds CISSP, OSCP, AWS Security Specialty, AZ-500, SC-200, CEH, Security+, and CySA+. Try asking about a specific skill -- HIPAA, Zero Trust, Splunk, AWS, certifications, or DevSecOps tools.';
-}
-
-let aiOpen=false;
-function toggleAI(){aiOpen=!aiOpen;document.getElementById('ai-panel').classList.toggle('open',aiOpen);if(aiOpen)document.getElementById('ai-input').focus();}
-function askChip(btn){document.getElementById('ai-input').value=btn.textContent;sendAI();}
-function sendAI(){
-  const inp=document.getElementById('ai-input');
-  const q=inp.value.trim();if(!q)return;inp.value='';
-  const msgs=document.getElementById('ai-messages');
-  const uDiv=document.createElement('div');uDiv.className='msg msg-user';uDiv.textContent=q;msgs.appendChild(uDiv);
-  const tDiv=document.createElement('div');tDiv.className='msg msg-typing';tDiv.textContent='querying knowledge base...';msgs.appendChild(tDiv);
-  msgs.scrollTop=msgs.scrollHeight;
-  setTimeout(()=>{
-    tDiv.remove();
-    const ans=getRulesAnswer(q);
-    const bDiv=document.createElement('div');bDiv.className='msg msg-bot';bDiv.textContent=ans;msgs.appendChild(bDiv);
-    msgs.scrollTop=msgs.scrollHeight;
-  },600);
-}
+  const phrases=['Cloud Security Engineer · Aetna','M.S. Cybersecurity · Quinnipiac University','CISSP · OSCP · AWS Security · SC-200','Zero Trust · CSPM · Detection Engineering','AWS · Azure · GCP · Prisma Cloud · Wiz','DevSecOps · IaC Security · Supply Chain'];
+  let pi=0,ci=0,deleting=false;
+  const el=document.getElementById('typewriter');
+  function type(){const phrase=phrases[pi];if(!deleting){el.innerHTML=phrase.slice(0,ci+1)+'<span class="cursor">_</span>';ci++;if(ci===phrase.length){deleting=true;setTimeout(type,2000);return}}else{el.innerHTML=phrase.slice(0,ci-1)+'<span class="cursor">_</span>';ci--;if(ci===0){deleting=false;pi=(pi+1)%phrases.length}}setTimeout(type,deleting?40:70)}
+  type();
+  const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}})},{threshold:0.1});
+  document.querySelectorAll('.card,.section-header').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition='opacity 0.5s ease,transform 0.5s ease';observer.observe(el)});
 </script>
 </body>
 </html>
