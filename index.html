@@ -605,7 +605,7 @@
     <button class="ai-chip" onclick="askChip(this)">AWS vs Azure?</button>
     <button class="ai-chip" onclick="askChip(this)">Certifications?</button>
     <button class="ai-chip" onclick="askChip(this)">Splunk/KQL skills?</button>
-    <button class="ai-chip" onclick="askChip(this)">Visa status?</button>
+    <button class="ai-chip" onclick="askChip(this)">DevSecOps tools?</button>
   </div>
   <div class="ai-input-row">
     <input class="ai-input" id="ai-input" type="text" placeholder="> ask anything..." onkeydown="if(event.key==='Enter')sendAI()"/>
@@ -737,60 +737,74 @@ setInterval(()=>{
   }catch(e){}
 })();
 
-// AI CHAT BOT
-const SYS=`You are RJ_ASSIST, an AI assistant on Rajkumar Jangam's cybersecurity portfolio. Answer questions about Rajkumar accurately and concisely (3-5 sentences max). Use a professional, slightly technical tone matching his terminal-themed portfolio.
+// AI CHAT BOT -- rule-based engine (no external API, works on GitHub Pages)
+const KB=[
+  {k:['hipaa','hitech','healthcare','patient','epic','medical','clinical','phi','hospital'],
+   a:'Rajkumar has deep HIPAA and HITECH hands-on experience from his current role at Aetna, where he protects 2M+ patient records. He has implemented HIPAA technical safeguards, maintained SSPs and POA&Ms, conducted security assessments across Epic EHR environments, and managed medical device security and clinical network segmentation. He also holds prior compliance project work covering Joint Commission and CMS healthcare delivery requirements.'},
+  {k:['zero trust','ztna','zerotrust','conditional access','least privilege'],
+   a:'Rajkumar has implemented Zero Trust Architecture (NIST SP 800-207) end-to-end at Aetna. This includes deploying Microsoft Entra ID Conditional Access, Okta SAML/OIDC/FIDO2, CyberArk and BeyondTrust PAM, HashiCorp Vault for secrets management, Tailscale ZTNA, and Just-in-Time access controls. The result was a 60% reduction in privileged attack surface and elimination of 100% of standing privileged access at Lincoln Financial Group.'},
+  {k:['aws','amazon','s3','ec2','lambda','guardduty','security hub','cloudtrail'],
+   a:'AWS is one of Rajkumar\'s primary platforms. He works daily with Security Hub, GuardDuty, Inspector, Macie, CloudTrail, WAF, Lambda, and AWS Secrets Manager at Aetna. He holds both the AWS Certified Security Specialty and AWS Solutions Architect Associate certifications. He has also built Terraform/Atlantis IaC pipelines with CloudFormation Guard for policy enforcement and Cloud Custodian for compliance-as-code.'},
+  {k:['azure','microsoft','sentinel','defender','entra','kql'],
+   a:'Rajkumar has strong Azure depth -- he holds AZ-500 and SC-200 certifications. He works with Microsoft Sentinel (KQL), Azure Defender, Microsoft Entra ID, Conditional Access, Azure DevOps, Logic Apps, and Azure Key Vault. At Lincoln Financial Group he built KQL detection rules, UEBA models, and automated SOAR playbooks in Sentinel, reducing false positives by 40%.'},
+  {k:['aws vs azure','aws or azure','cloud platform','multi-cloud','gcp'],
+   a:'Rajkumar operates across all three major clouds. AWS is his deepest platform with two AWS certifications and daily hands-on work in GuardDuty, Security Hub, and Inspector. Azure is his second-strongest with AZ-500 and SC-200 certifications and extensive Sentinel/Defender XDR experience. GCP is his third platform, working with GCP Security Command Center and GCP Secret Manager at Aetna. He manages CSPM across all three using Prisma Cloud and Wiz.'},
+  {k:['cert','certification','cissp','oscp','ceh','comptia','security+','cysa'],
+   a:'Rajkumar holds 8 active certifications: CISSP (ISC)2, OSCP (Offensive Security), AWS Security Specialty, AWS Solutions Architect Associate, AZ-500 (Microsoft), SC-200 (Microsoft Security Operations), CEH (EC-Council), CompTIA Security+, and CompTIA CySA+. The CISSP and OSCP combination is particularly rare -- it demonstrates both broad security governance depth and hands-on offensive/red team capability.'},
+  {k:['splunk','spl','qradar','siem','elastic','detection','ueba'],
+   a:'Splunk SPL is one of Rajkumar\'s strongest technical skills. He has built production detection rules, UEBA models, and live SOC dashboards from scratch -- including his Home SOC Lab project where he wrote 4 custom SPL rules detecting T1110 Brute Force, T1059 PowerShell, and T1046 Network Scanning with zero false positives over a 30-day run. At Lincoln he used KQL in Microsoft Sentinel and built ETL pipelines in Elastic and Databricks for anomaly detection.'},
+  {k:['kql','sentinel','microsoft sentinel'],
+   a:'Rajkumar is proficient in KQL (Kusto Query Language) for Microsoft Sentinel. At Lincoln Financial Group he wrote detection rules, UEBA correlation queries, and automated SOAR playbook triggers in Sentinel, contributing to a 40% reduction in false positives and 30% MTTR improvement. He holds the SC-200 Microsoft Security Operations Analyst certification which validates this expertise.'},
+  {k:['devsecops','terraform','pipeline','cicd','ci/cd','shift left','checkov','snyk','semgrep'],
+   a:'Rajkumar has integrated security into 10+ production DevSecOps pipelines at Aetna. His toolchain includes Terraform and Atlantis for IaC, Semgrep SAST, Snyk SCA, Trufflehog for secrets scanning, Checkov and OPA for policy-as-code, Falco for runtime security, and Aqua Security for container protection. He works across GitHub Actions, Jenkins, and Azure DevOps. This is hands-on daily work, not theoretical knowledge.'},
+  {k:['container','kubernetes','docker','k8s','aqua'],
+   a:'Rajkumar manages CNAPP and Kubernetes security at Aetna using Prisma Cloud, Wiz, and Aqua Security. He has remediated 500+ cloud vulnerabilities across containerized workloads, implemented runtime security with Falco, and secured container images through the CI/CD pipeline using Snyk SCA and Checkov. He also works with Docker and OpenShift in multi-cloud environments.'},
+  {k:['threat hunt','threat intel','mitre','att&ck','diamond','kill chain','misp','ioc'],
+   a:'Rajkumar has hands-on threat intelligence and hunting experience across all three roles. He uses MITRE ATT&CK, the Diamond Model, and Kill Chain frameworks for structured analysis. His toolset includes MISP, ThreatConnect, and Recorded Future for IOC correlation, and Volatility, Autopsy, and Wireshark for forensics. At TCS he produced threat intelligence briefings for leadership tracking geopolitical, criminal, and hacktivist threat actor campaigns.'},
+  {k:['incident response','ir','forensic','forensics','mttr','mttd'],
+   a:'Rajkumar has led incident response across all three roles. At Aetna he reduced cloud IR time by 35%. At Lincoln he improved MTTR by 30% and MTTD by 25% through tuned detection rules and SOAR automation. At TCS he maintained a 100% incident resolution rate across 300+ monthly events. His forensic toolkit includes Volatility, Autopsy, and Wireshark for endpoint and memory forensics.'},
+  {k:['compliance','nist','pci','gdpr','sox','fedramp','cmmc','iso 27001','hitrust','soc 2'],
+   a:'Rajkumar covers a wide compliance surface: HIPAA, HITECH, NIST 800-53, NIST CSF, HITRUST, PCI-DSS, SOC 2 Type II, ISO 27001, GDPR, CCPA, SOX ITGC, FedRAMP, CMMC, and CIS Controls 18. At Aetna he maintains SSPs, POA&Ms, and continuous assessment processes. At Lincoln he supported SOC 2, PCI-DSS, GDPR, and SOX audits. At TCS he contributed to SOC 1, SOC 2 Type II, and ISO 27001 certification processes.'},
+  {k:['python','scripting','automation','powershell','bash','go','programming'],
+   a:'Rajkumar automates security operations extensively using Python, PowerShell, Go, and Bash. At Aetna his automation work saves 25+ engineering hours per week -- covering cloud governance, Lambda functions, Azure Functions, and REST API integrations. He also works with KQL, SPL, SQL, JavaScript, and Ruby. He has built Power BI and Snowflake reporting dashboards and Jira workflow automations.'},
+  {k:['experience','background','career','work','job','role','current','aetna','lincoln'],
+   a:'Rajkumar has 4+ years of cybersecurity experience across three roles: Cloud Security Engineer at Aetna (Feb 2026-present) protecting 2M+ patient records; Security Analyst at Lincoln Financial Group (Jul 2024-Dec 2025) triaging 400+ daily alerts; and SOC Analyst at Tata Consultancy Services (Jun 2021-Dec 2023) with 100% incident resolution rate. He holds an M.S. in Cybersecurity from Quinnipiac University with a 3.87 GPA.'},
+  {k:['education','degree','masters','ms','university','quinnipiac','gpa'],
+   a:'Rajkumar holds an M.S. in Cybersecurity from Quinnipiac University, Hamden CT, with a GPA of 3.87/4.0 (completed Dec 2025). His capstone project was an ML-driven email phishing detection system using Random Forest and TF-IDF trained on 10,000 emails. He also holds a B.Tech in Computer Science from KGRCET, Hyderabad, India.'},
+  {k:['contact','email','reach','hire','available','open'],
+   a:'Rajkumar is actively open to new opportunities. You can reach him at rajkumarjangam1710@gmail.com or connect on LinkedIn at linkedin.com/in/rajkumar-jangam-559827228. He is based in Prospect, CT and open to relocation to Texas, Florida, Washington, or Tennessee.'},
+  {k:['pentest','penetration','red team','offensive','oscp','kali','metasploit','bug bounty'],
+   a:'Rajkumar holds the OSCP certification and has hands-on offensive security experience. At TCS he conducted red team exercises and adversarial emulation using Kali Linux, Metasploit, and custom tooling. He has also performed bug bounty triage via HackerOne and Bugcrowd. His OSCP combined with CISSP demonstrates both offensive capability and defensive governance depth -- a rare combination at the engineer level.'},
+  {k:['dlp','data loss','purview','symantec','casb','sspm'],
+   a:'Rajkumar has administered enterprise DLP across multiple platforms: Microsoft Purview, Symantec DLP, and McAfee DLP. He also manages CASB for cloud app visibility, SSPM for SaaS security posture, and OAuth scope governance for shadow IT detection. At Lincoln Financial Group he used Defender for Cloud Apps to protect sensitive financial and customer data across hybrid cloud environments.'},
+  {k:['pki','certificate','digicer','appviewx','ssl','tls'],
+   a:'Rajkumar manages PKI and certificate lifecycle at Aetna using DigiCert and AppViewX. He coordinates secrets rotation with engineering teams across HashiCorp Vault, AWS Secrets Manager, Azure Key Vault, and GCP Secret Manager. He also administers Akamai WAF, AWS WAF, Palo Alto NGFW, and F5 LTM/GTM for perimeter and application layer protection.'},
+];
 
-ABOUT RAJKUMAR:
-Current: Cloud Security Engineer, Aetna Inc, Hartford CT (Feb 2026-Present)
-Prior: Security Analyst, Lincoln Financial Group, Radnor PA (Jul 2024-Dec 2025) - contract concluded as planned
-Prior: SOC Analyst, Tata Consultancy Services, Mumbai India (Jun 2021-Dec 2023) - left for M.S.
-Education: M.S. Cybersecurity, Quinnipiac University GPA 3.87 | B.Tech CS KGRCET
-Location: Prospect CT. Open to relocate TX, FL, WA, TN.
-Visa: F-1 OPT/STEM OPT EAD through Dec 2028. Does NOT require sponsorship now or ever.
-Salary target: $120K floor, $130K+ target.
+function getRulesAnswer(q){
+  const lower=q.toLowerCase();
+  for(const rule of KB){
+    if(rule.k.some(k=>lower.includes(k))) return rule.a;
+  }
+  return 'Good question. Rajkumar has 4+ years of hands-on cybersecurity experience across Cloud Security Engineering, Detection Engineering, Incident Response, and DevSecOps at Aetna and Lincoln Financial Group. He holds CISSP, OSCP, AWS Security Specialty, AZ-500, SC-200, CEH, Security+, and CySA+. Try asking about a specific skill -- HIPAA, Zero Trust, Splunk, AWS, certifications, or DevSecOps tools.';
+}
 
-CERTIFICATIONS: CISSP (ISC)2 | OSCP Offensive Security | AWS Security Specialty | AWS Solutions Architect | AZ-500 | SC-200 | SC-300 | CEH | Security+ | CySA+
-
-KEY METRICS: 2M+ patient records protected | 500+ cloud vulns remediated | 45% cloud misconfiguration reduction | 95% critical CVE fix within 72h | 25+ eng hrs saved/week | 5000+ assets managed | 400+ daily alerts triaged | 40% false positive reduction | 30% MTTR reduction | 300+ monthly events | 100% resolution rate
-
-CLOUD: AWS (Security Hub, GuardDuty, Inspector, Macie, CloudTrail, WAF, Lambda, Secrets Manager) | Azure (Defender, Entra ID, Sentinel, AZ-500, Key Vault) | GCP Security Command Center | Prisma Cloud, Wiz, Lacework, Aqua Security | Cloud Custodian, CloudFormation Guard, Terraform/Atlantis
-
-IDENTITY/PAM: Okta, CyberArk, BeyondTrust, HashiCorp Vault, AWS Secrets Manager, Azure Key Vault, GCP Secret Manager, SAML/OIDC/FIDO2/WebAuthn, Tailscale, SSPM, CASB
-
-DETECTION/SIEM: Splunk ES (SPL), Microsoft Sentinel (KQL), QRadar, ArcSight, Elastic, Databricks | MITRE ATT&CK, UEBA, SOAR | Volatility, Autopsy, Wireshark for forensics
-
-COMPLIANCE: HIPAA, HITECH, PCI-DSS, SOC 2 Type II, NIST 800-53, HITRUST, GDPR, CCPA, SOX, FedRAMP, CMMC, ISO 27001, CIS Controls 18 | Healthcare: Epic EHR, medical device, clinical network | SSPs, POA&Ms
-
-DEVSECOPS: Terraform, Atlantis, GitHub Actions, Jenkins, Azure DevOps | Semgrep SAST, Snyk SCA, Trufflehog, Checkov, OPA, Falco, Aqua Security | DigiCert/AppViewX PKI, Akamai WAF, AWS WAF, F5 LTM/GTM
-
-THREAT INTEL: MISP, ThreatConnect, Recorded Future | Diamond Model, Kill Chain, STRIDE | HackerOne, Bugcrowd bug bounty triage | Red team exercises, adversarial emulation
-
-SCRIPTING: Python, Go, Bash, PowerShell, KQL, SPL, SQL, JavaScript, Ruby
-
-Contact: rajkumarjangam1710@gmail.com | linkedin.com/in/rajkumar-jangam-559827228`;
-
-let aiOpen=false,chatHistory=[];
+let aiOpen=false;
 function toggleAI(){aiOpen=!aiOpen;document.getElementById('ai-panel').classList.toggle('open',aiOpen);if(aiOpen)document.getElementById('ai-input').focus();}
 function askChip(btn){document.getElementById('ai-input').value=btn.textContent;sendAI();}
-async function sendAI(){
+function sendAI(){
   const inp=document.getElementById('ai-input');
   const q=inp.value.trim();if(!q)return;inp.value='';
   const msgs=document.getElementById('ai-messages');
-  const sendBtn=document.getElementById('ai-send');
   const uDiv=document.createElement('div');uDiv.className='msg msg-user';uDiv.textContent=q;msgs.appendChild(uDiv);
-  const tDiv=document.createElement('div');tDiv.className='msg msg-typing';tDiv.textContent='processing query...';msgs.appendChild(tDiv);
-  msgs.scrollTop=msgs.scrollHeight;sendBtn.disabled=true;
-  chatHistory.push({role:'user',content:q});
-  try{
-    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:400,system:SYS,messages:chatHistory})});
-    const data=await r.json();
-    const ans=data.content?.[0]?.text||'Connection error. Please try again.';
-    chatHistory.push({role:'assistant',content:ans});
+  const tDiv=document.createElement('div');tDiv.className='msg msg-typing';tDiv.textContent='querying knowledge base...';msgs.appendChild(tDiv);
+  msgs.scrollTop=msgs.scrollHeight;
+  setTimeout(()=>{
     tDiv.remove();
+    const ans=getRulesAnswer(q);
     const bDiv=document.createElement('div');bDiv.className='msg msg-bot';bDiv.textContent=ans;msgs.appendChild(bDiv);
-  }catch(e){tDiv.remove();const eDiv=document.createElement('div');eDiv.className='msg msg-bot';eDiv.textContent='// Error -- please try again.';msgs.appendChild(eDiv);}
-  sendBtn.disabled=false;msgs.scrollTop=msgs.scrollHeight;
+    msgs.scrollTop=msgs.scrollHeight;
+  },600);
 }
 </script>
 </body>
