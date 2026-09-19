@@ -778,7 +778,7 @@ async function heroSend(){
   const tDiv=document.createElement('div');tDiv.className='hero-msg hero-msg-typing';tDiv.textContent='Claude is thinking...';msgs.appendChild(tDiv);
   msgs.scrollTop=msgs.scrollHeight;
   try{
-    const resp=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:150,system:RAJ_CTX,messages:[{role:'user',content:q}]})});
+    const resp=await fetch('https://raj-portfolio.rajkuar1819.workers.dev/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:150,system:RAJ_CTX,messages:[{role:'user',content:q}]})});
     const data=await resp.json();
     tDiv.remove();
     const bDiv=document.createElement('div');bDiv.className='hero-msg hero-msg-bot';bDiv.textContent=data.content&&data.content[0]?data.content[0].text:'Try again in a moment.';msgs.appendChild(bDiv);
